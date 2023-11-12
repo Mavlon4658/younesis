@@ -4,7 +4,7 @@
             <div>
                 <slot></slot>
             </div>
-            <button class="user_panel">
+            <router-link :to="{name: 'Profile'}" @click="$store.commit('changeDefaultHome', 'Профиль')" class="user_panel">
                 <img src="@/assets/images/user_logo.png" alt="">
                 <span class="user_name">
                     Андрей Иванов
@@ -12,7 +12,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M10 16L14 12L10 8" stroke="#121111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            </router-link>
         </div>
     </nav>
 </template>
@@ -40,6 +40,7 @@ nav .nav_content {
     width: calc(100% - 260px);
     background: #fff;
     z-index: 2;
+    height: 96px;
 }
 
 .dark-theme nav .nav_content {
@@ -51,6 +52,7 @@ nav .user_panel {
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
 }
 
 nav .user_panel .user_name {

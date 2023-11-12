@@ -7,11 +7,11 @@
                     v-for="(menu, i) in menues"
                     :key="i"
                     class="header_link_wrapper"
-                    :class="[{'active': default_home === menu.name}, menu.className]"
+                    :class="[{'active': $store.state.default_home === menu.name}, menu.className]"
                 >
                     <router-link 
                         :to="{name: menu.to}"
-                        @click="default_home = menu.name"
+                        @click="$store.commit('changeDefaultHome', menu.name)"
                         class="header_link"
                     >
                         <span v-html="menu.svg" class="icon"></span>
@@ -88,7 +88,6 @@ export default {
                         </svg>`
                 }
             ],
-            default_home: 'Главная',
         }
     }
 }

@@ -1,10 +1,10 @@
 <template>
-    <div>Hello profile</div>
+    <h1>hello EditLinksToProjects</h1>
 </template>
 
 <script>
 export default {
-    name: "Profile"
+    name: 'EditLinksToProjects'
 }
 </script>
 

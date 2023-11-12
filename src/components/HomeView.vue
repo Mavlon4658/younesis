@@ -13,7 +13,7 @@
 import Header from '@/components/Header.vue';
 
 export default {
-    name: "HomeDefault",
+    name: "HomeView",
     components: {
         Header,
     }
@@ -52,6 +52,11 @@ export default {
         border-top: 1px solid #F3EFEF;
         background: #FFF;
         padding: 0;
+    }
+
+    .dark-theme .header_wrapper {
+        background: #171717;
+        border-top: 1px solid #2B2B2B;
     }
 
     .home_wrapper {

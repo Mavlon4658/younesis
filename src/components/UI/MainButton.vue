@@ -2,6 +2,7 @@
     <button 
         @click="$emit('click')"
         class="main_button"
+        :class="type"
     >
         <slot />
     </button>
@@ -10,6 +11,12 @@
 <script>
 export default {
     name: "MainButton",
+    props: {
+        type: {
+            type: String,
+            default: ''
+        }
+    }
 }
 </script>
 
@@ -26,5 +33,24 @@ export default {
     line-height: 18px;
     height: 56px;
     padding: 0px 24px;
+}
+
+.main_button.light {
+    height: 48px;
+    padding: 0px 14px;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid #D3D2D2;
+    color: #121111;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 </style>
