@@ -42,6 +42,11 @@ nav .nav_content {
     z-index: 2;
 }
 
+.dark-theme nav .nav_content {
+    background: #171717;
+    border-bottom: 1px solid #2B2B2B;
+}
+
 nav .user_panel {
     display: flex;
     align-items: center;
@@ -56,5 +61,19 @@ nav .user_panel .user_name {
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
+}
+
+.dark-theme nav .user_panel .user_name {
+    color: #fff;
+}
+
+.dark-theme nav .user_panel svg path {
+    stroke: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+    nav {
+        display: none;
+    }
 }
 </style>

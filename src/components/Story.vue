@@ -211,4 +211,25 @@ export default {
     line-height: 18px;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 992px) {
+    .story_modal_content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    .story_modal_head_wrapper {
+        left: 16px;
+        width: calc(100% - 32px);
+    }
+
+    .story_modal_head {
+        gap: 8px;
+    }
+
+    .story_modal_head_item {
+        width: calc(100% / 3 - 16px / 3);
+    }
+}
 </style>
