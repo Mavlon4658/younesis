@@ -79,4 +79,20 @@ export default {
     font-weight: 500;
     line-height: 22px;
 }
+
+.input_wrapper input:focus {
+    border: 1px solid #CF2E2E;
+}
+
+.dark-theme .input_wrapper input {
+    color: #fff;
+    border: 1px solid #4D4C4C;
+}
+
+@media only screen and (max-width: 992px) {
+    .input_wrapper input {
+        height: 56px;
+        padding: 0px 16px;
+    }
+}
 </style>

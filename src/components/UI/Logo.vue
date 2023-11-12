@@ -1,6 +1,7 @@
 <template>
     <div class="logotip">
-        <img src="@/assets/logo.svg" alt="">
+        <img src="@/assets/logo.svg" class="light" alt="">
+        <img src="@/assets/light_logo.svg" class="dark" alt="">
     </div>
 </template>
 
@@ -17,5 +18,17 @@ export default {
     height: 32px;
     align-items: flex-end;
     justify-content: flex-end;
+}
+
+.logotip .dark {
+    display: none;
+}
+
+.dark-theme .logotip .light {
+    display: none;
+}
+
+.dark-theme .logotip .dark {
+    display: block;
 }
 </style>

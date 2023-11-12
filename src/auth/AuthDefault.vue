@@ -2,6 +2,7 @@
     <div class="auth_wrapper">
         <div class="auth_container">
             <div class="auth_head">
+                <Logo />
                 <button>
                     <img src="@/assets/close.svg" alt="">
                 </button>
@@ -14,7 +15,7 @@
                     </div>
                 </div>
                 <div class="auth_right">
-                    <img src="@/assets/auth_bg.png" alt="">
+                    <!-- here is a image -->
                 </div>
             </div>
         </div>
@@ -40,6 +41,10 @@ export default {
     justify-content: flex-end;
 }
 
+.auth_head .logotip {
+    display: none;
+}
+
 .auth_head button {
     width: 32px;
     height: 32px;
@@ -63,8 +68,20 @@ export default {
     height: 720px;
 }
 
+.dark-theme .auth_row {
+    background: #222;
+}
+
 .auth_left, .auth_right {
     width: 50%;
+}
+
+.auth_right {
+    background: #ECECEC;
+}
+
+.dark-theme .auth_right {
+    background: #4B4B4B;
 }
 
 .auth_right img {
@@ -87,5 +104,68 @@ export default {
 
 .auth_left .logotip {
     margin-bottom: 48px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .auth_container {
+        max-width: calc(100% - 100px);
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .auth_container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+
+    .auth_wrapper {
+        background: #171717;
+        margin: 0;
+        height: 100vh;
+        padding-top: 64px;
+    }
+
+    .auth_row {
+        height: calc(100vh - 128px);
+        border-radius: 16px 16px 0 0;
+    }
+
+    .auth_right {
+        display: none;
+    }
+
+    .auth_left {
+        width: 100%;
+        padding: 24px 16px;
+        display: block;
+    }
+
+    .auth_head {
+        padding: 0px 16px;
+        justify-content: space-between;
+        height: 32px;
+        margin-bottom: 32px;
+    }
+
+    .auth_head .logotip {
+        display: block;
+    }
+
+    .auth_head .logotip .light {
+        display: none;
+    }
+
+    .auth_head .logotip .dark {
+        display: block;
+    }
+
+    .auth_left_in {
+        width: 100%;
+    }
+
+    .auth_left_in .logotip {
+        display: none;
+    }
 }
 </style>
