@@ -1,7 +1,7 @@
 <template>
     <div class="logotip">
-        <img src="@/assets/logo.svg" class="light" alt="">
-        <img src="@/assets/light_logo.svg" class="dark" alt="">
+        <img src="@/assets/images/logo.svg" class="light" alt="">
+        <img src="@/assets/images/light_logo.svg" class="dark" alt="">
     </div>
 </template>
 

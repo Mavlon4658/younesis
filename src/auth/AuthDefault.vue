@@ -4,7 +4,7 @@
             <div class="auth_head">
                 <Logo />
                 <button>
-                    <img src="@/assets/close.svg" alt="">
+                    <img src="@/assets/images/close.svg" alt="">
                 </button>
             </div>
             <div class="auth_row">

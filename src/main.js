@@ -3,7 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import './app.scss'
+import '@/assets/app.scss'
 import components from '@/components/UI'
 import jQuery from "jquery";
 const $ = jQuery;

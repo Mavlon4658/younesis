@@ -47,6 +47,16 @@ body.dark-theme {
     color: #fff;
 }
 
+.main_title {
+    color: #121111;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Raleway", sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
 @media only screen and (max-width: 992px) {
     .auth_title {
         font-size: 24px;

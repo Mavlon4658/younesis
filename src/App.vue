@@ -12,7 +12,7 @@ export default ({
     }
   },
   mounted () {
-    $('body').addClass('dark-theme')
+    // $('body').addClass('dark-theme')
   }
 })
 </script>
