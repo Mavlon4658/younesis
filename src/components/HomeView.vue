@@ -1,6 +1,6 @@
 <template>
     <div class="home_default">
-        <div class="header_wrapper">
+        <div class="header_wrapper" :class="{'mobile_header': $route.path.includes('profile/edit') || $route.name == 'Settings'}">
             <Header />
         </div>
         <div class="home_wrapper">
@@ -52,6 +52,10 @@ export default {
         border-top: 1px solid #F3EFEF;
         background: #FFF;
         padding: 0;
+    }
+
+    .mobile_header {
+        display: none;
     }
 
     .dark-theme .header_wrapper {

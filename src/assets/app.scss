@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -81,6 +80,14 @@ body.dark-theme {
     }
 }
 
+.hidden {
+    display: none;
+}
+
+.edit_head_mobile {
+    display: none;
+}
+
 .dark-theme {
     .auth_title {
         color: #fff;
@@ -88,6 +95,20 @@ body.dark-theme {
 
     .main_title {
         color: #fff;
+    }
+
+    .edit_link {
+        border: 1px solid #4D4C4C;
+
+        svg {
+            path, circle {
+                stroke: #fff;
+            }
+        }
+
+        span {
+            color: #fff;
+        }
     }
 }
 
@@ -98,5 +119,35 @@ body.dark-theme {
         font-weight: 700;
         line-height: 28px;
         margin-bottom: 16px;
+    }
+    
+    .edit_head_mobile {
+        display: block;
+        position: relative;
+        margin-bottom: 24px;
+
+        .link {
+            position: absolute;
+        }
+
+        .title {
+            text-align: center;
+            color: #121111;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 22px;
+        }
+        
+    }
+
+    .dark-theme {
+        .edit_head_mobile {
+            .title {
+                color: #fff;
+            }
+        }
     }
 }

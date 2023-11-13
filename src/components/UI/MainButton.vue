@@ -1,8 +1,7 @@
 <template>
-    <button 
-        @click="$emit('click')"
+    <button
         class="main_button"
-        :class="type"
+        :class="[type, className]"
     >
         <slot />
     </button>
@@ -13,6 +12,10 @@ export default {
     name: "MainButton",
     props: {
         type: {
+            type: String,
+            default: ''
+        },
+        className: {
             type: String,
             default: ''
         }
@@ -52,5 +55,10 @@ export default {
     align-items: center;
     justify-content: center;
     gap: 4px;
+}
+
+.dark-theme .main_button.light {
+    border: 1px solid #4D4C4C;
+    color: #fff;
 }
 </style>

@@ -4,7 +4,7 @@
             <div>
                 <slot></slot>
             </div>
-            <router-link :to="{name: 'Profile'}" @click="$store.commit('changeDefaultHome', 'Профиль')" class="user_panel">
+            <router-link :to="{name: 'Profile'}" class="user_panel">
                 <img src="@/assets/images/user_logo.png" alt="">
                 <span class="user_name">
                     Андрей Иванов

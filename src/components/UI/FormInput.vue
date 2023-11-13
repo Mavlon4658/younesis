@@ -1,11 +1,18 @@
 <template>
     <div class="input_wrapper">
         <label>{{ label }}</label>
-        <input v-if="type !== 'phone'" :type="type" :value="value" @input="e => $emit('update:value', e.target.value)">
+        <input
+            v-if="type !== 'phone'"
+            :type="type"
+            :value="value"
+            :placeholder="placeholder"
+            @input="e => $emit('update:value', e.target.value)"
+        >
         <input
             v-if="type === 'phone'"
             v-model="maskedValue"
             v-maska="bindedObject"
+            :placeholder="placeholder"
             data-maska="+7 (###) ###-##-##"
             @maska="$emit('update:value', '+7' + bindedObject.unmasked)"
             pattern="[0-9]*"

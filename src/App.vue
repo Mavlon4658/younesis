@@ -11,9 +11,22 @@ export default ({
 
     }
   },
-  mounted () {
-    // $('body').addClass('dark-theme')
-  }
+  created () {
+    let dark = localStorage.getItem('dark_mode');
+        
+    if (!dark) {
+        localStorage.setItem('dark_mode', JSON.stringify(false));
+        dark = false;
+    } else {
+      dark = JSON.parse(dark);
+    }
+
+    if (dark) {
+      $('body').addClass('dark-theme')
+    } else {
+      $('body').removeClass('dark-theme')
+    }
+  },
 })
 </script>
 

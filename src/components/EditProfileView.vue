@@ -9,7 +9,7 @@
                 <div class="item active">Редактировать профиль</div>
             </div>
         </Nav>
-        <div class="edit_profile_content">
+        <div class="edit_profile_content" :class="{'active': $route.path.includes('profile/edit')}">
             <router-link :to="{name: 'Profile'}" class="edit_link red">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12H19" stroke="#CF2E2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -122,8 +122,20 @@ export default {
     line-height: 22px;
 }
 
+.dark-theme .list_pages .item {
+    color: #A6A5A5;
+}
+
 .list_pages .item.active {
     color: #121111;
+}
+
+.dark-theme .list_pages .item.active {
+    color: #FFFFFF;
+}
+
+.dark-theme .list_pages svg path {
+    stroke: #fff;
 }
 
 .edit_profile_content {
@@ -146,17 +158,34 @@ export default {
     padding: 12px;
 }
 
+.dark-theme .edit_links {
+    background: #222222;
+}
+
 .edit_links .item {
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    padding: 16px;
+    padding: 0 16px;
+    height: 56px;
+}
+
+.dark-theme .edit_links .item .title {
+    color: #A6A5A5;
+}
+
+.dark-theme .edit_links .item svg path {
+    stroke: #4D4D4D;
 }
 
 .edit_links .item.active {
     border-radius: 8px;
     background: #FFF;
+}
+
+.dark-theme .edit_links .item.active {
+    background: #3B3B3B;
 }
 
 .edit_links .item .title {
@@ -169,16 +198,49 @@ export default {
     line-height: 22px;
 }
 
+
 .edit_links .item.active .title {
     color: #CF2E2E;
     font-weight: 600;
+}
+
+.dark-theme .edit_links .item.active .title {
+    color: #fff;
 }
 
 .edit_links .item.active svg path {
     stroke: #CF2E2E;
 }
 
+.dark-theme .edit_links .item.active svg path {
+    stroke: #fff;
+}
+
 .view_right {
     width: 325px;
+}
+
+@media only screen and (max-width: 992px) {
+    .edit_profile_content .edit_links,
+    .edit_profile_content .edit_link {
+        display: none;
+    }
+
+    .edit_profile_content {
+        padding: 56px 16px 118px;
+    }
+
+    .edit_profile_content.active {
+        padding-bottom: 52px;
+    }
+
+    .edit_rofile_view {
+        padding: 0;
+        margin: 0;
+    }
+
+    .view_right {
+        width: 100%;
+    }
 }
 </style>
