@@ -7,7 +7,11 @@
                     v-for="(menu, i) in menues"
                     :key="i"
                     class="header_link_wrapper"
-                    :class="[{'active': $route.name === menu.to}, menu.className]"
+                    :class="[{
+                            'active': $route.name === menu.to,
+                        },
+                        menu.className
+                    ]"
                 >
                     <router-link 
                         :to="{name: menu.to}"
@@ -20,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="support_chat_wrapper">
+        <div class="support_chat_wrapper support_chat">
             <img src="@/assets/images/telegram_icon.svg" alt="" class="icon">
             <div class="title">Чат поддержки</div>
             <div class="description">Напиши нам в Telegram, если у тебя возникли вопросы или идеи по улучшению платформы — ответим на все!</div>
@@ -89,6 +93,9 @@ export default {
             ],
         }
     },
+    mounted () {
+        console.log(this.$route);
+    }
 }
 </script>
 
@@ -169,55 +176,6 @@ header {
     background: #2B2B2B;
 }
 
-.support_chat_wrapper {
-    position: relative;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%);
-    padding: 20px 26px 20px 20px;
-}
-
-.support_chat_wrapper .icon {
-    position: absolute;
-    bottom: 39px;
-    right: 0;
-}
-
-.support_chat_wrapper .title {
-    position: relative;
-    color: #FFF;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-    margin-bottom: 4px;
-}
-
-.support_chat_wrapper .description {
-    color: rgba(255, 255, 255, 0.80);
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    margin-bottom: 46px;
-}
-
-.support_chat_wrapper button {
-    border-radius: 8px;
-    background: #48B2E5;
-    padding: 12px 16px;
-    color: #FFF;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px;
-}
-
 @media only screen and (max-width: 992px) {
     .header_top .logotip {
         display: none;
@@ -237,6 +195,7 @@ header {
         height: 44px;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
 
     .header_link_wrapper.active .header_link {
@@ -254,6 +213,10 @@ header {
     .header_link .icon svg {
         width: 24px;
         height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .support_chat_wrapper {

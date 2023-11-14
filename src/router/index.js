@@ -4,7 +4,10 @@ import LogIn from "@/auth/LogIn.vue";
 import Register from "@/auth/Register.vue";
 import HomeView from '@/components/HomeView.vue';
 import Home from "@/views/Home.vue";
-import Courses from "@/views/Courses.vue";
+import CoursesLayout from '@/views/courses/CoursesLayout.vue';
+import Courses from "@/views//courses/Courses.vue";
+import Won from '@/views/courses/Won.vue';
+import Marketplace from '@/views/courses/Marketplace.vue';
 import Settings from '@/views/Settings.vue';
 import Support from '@/views/Support.vue';
 import ProfileView from '@/components/ProfileView.vue';
@@ -23,7 +26,16 @@ const routes = [
     component: HomeView,
     children: [
       {path: '/', name: 'Home', component: Home},
-      {path: 'courses', name: 'Courses', component: Courses},
+      {
+        path: 'courses',
+        name: 'CoursesLayout',
+        component: CoursesLayout,
+        children: [
+          {path: '' , name: "Courses", component: Courses},
+          {path: 'won', name: "Won", component: Won},
+          {path: 'marketplace', name: 'Marketplace', component: Marketplace},
+        ]
+      },
       {path: 'settings', name: 'Settings', component: Settings},
       {path: 'support', name: 'Support', component: Support},
       {

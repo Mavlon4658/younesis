@@ -88,6 +88,152 @@ body.dark-theme {
     display: none;
 }
 
+.courses_card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    
+    .card {
+        border-radius: 16px;
+        background: #F6F6F6;
+        padding: 16px;
+        width: 325px;
+        height: 346px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .card_left {
+            display: none;
+        }
+
+        .card_right {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card_img {
+            border-radius: 8px;
+            overflow: hidden;
+            background: #DEDEDE;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            margin-bottom: 16px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .card_title {
+            color: #121111;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: "Raleway", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 28px;
+        }
+
+        .remained {
+            border-radius: 29px;
+            background: #F94438;
+            padding: 4px 12px;
+            width: auto;
+            display: inline-block;
+            margin-top: 8px;
+            color: #FFF;
+            text-align: center;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: "Raleway", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 18px;
+        }
+
+        .amount {
+            border-radius: 29px;
+            background: #ECECEC;
+            padding: 4px 12px;
+            color: #121111;
+            text-align: center;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 22px;
+            display: inline-block;
+            margin-top: 16px;
+
+            span {
+                color: #A6A5A5;
+                text-align: center;
+                font-variant-numeric: lining-nums proportional-nums;
+                font-family: "Raleway", sans-serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 18px;
+                margin-left: 8px;
+                text-decoration: line-through;
+            }
+        }
+
+        .card_degree {
+            .degree_head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+
+                .dedgree_title {
+                    color: #121111;
+                    font-variant-numeric: lining-nums proportional-nums;
+                    font-family: "Raleway", sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 18px;
+                }
+
+                .degree_value {
+                    color: #CF2E2E;
+                    font-variant-numeric: lining-nums proportional-nums;
+                    font-family: "Raleway", sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 18px;
+                }
+            }
+
+            .degree_line {
+                border-radius: 4px;
+                background: #ECECEC;
+                height: 8px;
+                position: relative;
+
+                span {
+                    height: 8px;
+                    border-radius: 4px;
+                    background: #CF2E2E;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
 .dark-theme {
     .auth_title {
         color: #fff;
@@ -110,7 +256,92 @@ body.dark-theme {
             color: #fff;
         }
     }
+
+    .courses_card_wrapper {
+        .card {
+            background: #222222;
+
+            .card_img {
+                background: #3B3B3B;
+            }
+
+            .card_title {
+                color: #fff;
+            }
+    
+            .amount {
+                background: #3B3B3B;
+                color: #fff;
+            }
+
+            .card_degree {
+                .degree_head {    
+                    .dedgree_title {
+                        color: #fff;
+                    }
+    
+                    .degree_value {
+                        color: #fff;
+                    }
+                }
+    
+                .degree_line {
+                    background: #4B4B4B;
+                }
+            }
+        }
+    }
 }
+
+.support_chat {
+    position: relative;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%);
+    padding: 20px 26px 20px 20px;
+
+    .icon {
+        position: absolute;
+        bottom: 39px;
+        right: 0;
+    }
+
+    .title {
+        position: relative;
+        color: #FFF;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Raleway", sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 4px;
+    }
+
+    .description {
+        color: rgba(255, 255, 255, 0.80);
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px;
+        margin-bottom: 46px;
+    }
+
+    button {
+        border-radius: 8px;
+        background: #48B2E5;
+        padding: 12px 16px;
+        color: #FFF;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+    }
+}
+
 
 @media only screen and (max-width: 992px) {
     .auth_title {
@@ -147,6 +378,107 @@ body.dark-theme {
         .edit_head_mobile {
             .title {
                 color: #fff;
+            }
+        }
+    }
+
+    .courses_card_wrapper {
+        gap: 12px;
+    
+        .card {
+            padding: 12px;
+            width: 100%;
+            height: 104px;
+            gap: 12px;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+
+            .card_left {
+                display: block;
+                border-radius: 8px;
+                background: #ECECEC;
+                padding: 4px;
+                width: 80px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+    
+            .card_img {
+                display: none;
+            }
+    
+            .card_right {
+                width: calc(100% - 92px);
+            }
+
+            .card_title {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 22px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .amount {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 18px;
+                margin-top: 8px;
+    
+                span {
+                    display: none;
+                }
+            }
+    
+            .card_degree {
+                .degree_head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+    
+                    .dedgree_title {
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 14px;
+                    }
+    
+                    .degree_value {
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 14px;
+                    }
+                }
+    
+                .degree_line {
+                    height: 4px;
+    
+                    span {
+                        height: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    .dark-theme {
+        .courses_card_wrapper {
+            .card {
+                .card_left {
+                    background: #3B3B3B;
+                }
             }
         }
     }

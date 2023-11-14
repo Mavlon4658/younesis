@@ -3,7 +3,7 @@
         <div class="auth_container">
             <div class="auth_head">
                 <Logo />
-                <button>
+                <button @click="$router.push({name: 'Home'})">
                     <img src="@/assets/images/close.svg" alt="">
                 </button>
             </div>
