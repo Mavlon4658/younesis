@@ -8,7 +8,7 @@
                     :key="i"
                     class="header_link_wrapper"
                     :class="[{
-                            'active': $route.name === menu.to,
+                            'active': checkActiveRoute(menu.to),
                         },
                         menu.className
                     ]"
@@ -94,7 +94,19 @@ export default {
         }
     },
     mounted () {
-        console.log(this.$route);
+        console.log(this.$router);
+    },
+    methods: {
+        checkActiveRoute (to) {
+            if (to === 'Courses') {
+                if (this.$route.path.includes('courses')) {
+                    return true;
+                }
+                return false;
+            }
+
+            return this.$route.name == to;
+        }
     }
 }
 </script>

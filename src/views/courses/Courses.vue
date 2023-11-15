@@ -24,15 +24,18 @@
         </div>
     </div>
     <select-course v-if="!cards.length" />
+    <course-modal />
 </template>
 
 <script>
 import SelectCourse from '@/components/SelectCourse.vue';
+import CourseModal from '@/components/CourseModal.vue';
 
 export default {
     name: "Courses",
     components: {
         SelectCourse,
+        CourseModal,
     },
     data () {
         return {
@@ -47,5 +50,7 @@ export default {
 </script>
 
 <style>
-
+.courses .card {
+    cursor: pointer;
+}
 </style>
