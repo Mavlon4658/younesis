@@ -1,6 +1,6 @@
 <template>
     <div class="home_default">
-        <div class="header_wrapper" :class="{'mobile_header': $route.path.includes('profile/edit') || $route.name == 'Settings'}">
+        <div v-if="$route.name != 'Test'" class="header_wrapper" :class="{'mobile_header': $route.path.includes('profile/edit') || $route.name == 'Settings'}">
             <Header />
         </div>
         <div class="home_wrapper">

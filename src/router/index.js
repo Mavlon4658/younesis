@@ -5,9 +5,11 @@ import Register from "@/auth/Register.vue";
 import HomeView from '@/components/HomeView.vue';
 import Home from "@/views/Home.vue";
 import CoursesLayout from '@/views/courses/CoursesLayout.vue';
-import Courses from "@/views//courses/Courses.vue";
+import Courses from "@/views/courses/Courses.vue";
+import Lesson from '@/views/courses/_id.vue';
 import Won from '@/views/courses/Won.vue';
 import Marketplace from '@/views/courses/Marketplace.vue';
+import Test from '@/views/courses/Test.vue';
 import Settings from '@/views/Settings.vue';
 import Support from '@/views/Support.vue';
 import ProfileView from '@/components/ProfileView.vue';
@@ -32,8 +34,10 @@ const routes = [
         component: CoursesLayout,
         children: [
           {path: '' , name: "Courses", component: Courses},
+          {path: ':id', name: 'Lesson', component: Lesson, props: true},
           {path: 'won', name: "Won", component: Won},
           {path: 'marketplace', name: 'Marketplace', component: Marketplace},
+          {path: 'test', name: 'Test', component: Test},
         ]
       },
       {path: 'settings', name: 'Settings', component: Settings},

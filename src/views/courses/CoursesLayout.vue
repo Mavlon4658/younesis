@@ -1,11 +1,11 @@
 <template>
     <div class="courses_layout">
-        <Nav>
+        <Nav v-if="checkRoute()">
             <div class="main_title">Мои курсы</div>
         </Nav>
-        <div class="courses_lyout_content">
-            <div class="mobile_title">Мои курсы</div>
-            <div class="courses_links">
+        <div class="courses_lyout_content" :class="{'lessons': $route.name === 'Lesson' || $route.name === 'Test'}">
+            <div v-if="checkRoute()" class="mobile_title">Мои курсы</div>
+            <div v-if="checkRoute()" class="courses_links">
                 <router-link
                     v-for="(item, i) in links"
                     :key="i"
@@ -34,6 +34,20 @@ export default {
                 {name: 'Маркетплейс', to: 'Marketplace'},
             ]
         }
+    },
+    methods: {
+        checkRoute () {
+            let t = true;
+            if (this.$route.name === 'Test') {
+                t = false;
+            }
+
+            if (this.$route.name === 'Lesson') {
+                t = false;
+            }
+
+            return t;
+        }
     }
 }
 </script>
@@ -41,6 +55,10 @@ export default {
 <style>
 .courses_lyout_content {
     padding: 20px;
+}
+
+.courses_lyout_content.lessons {
+    padding: 0;
 }
 
 .courses_links {

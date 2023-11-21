@@ -93,9 +93,6 @@ export default {
             ],
         }
     },
-    mounted () {
-        console.log(this.$router);
-    },
     methods: {
         checkActiveRoute (to) {
             if (to === 'Courses') {

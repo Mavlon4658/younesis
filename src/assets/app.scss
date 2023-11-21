@@ -23,8 +23,15 @@ span {
     display: inline-block;
 }
 
+ul, li {
+    list-style-type: none;
+}
+
 body {
     background: #fff;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
 }
 
 body.dark-theme {
@@ -44,12 +51,23 @@ body.dark-theme {
 
 .main_title {
     color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
     font-size: 28px;
-    font-style: normal;
     font-weight: 700;
     line-height: 32px;
+}
+
+.main_title_2 {
+    color: #121111;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.description {
+    color: #121111;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
 }
 
 .edit_link {
@@ -77,6 +95,41 @@ body.dark-theme {
 .edit_link.red {
     span {
         color: #CF2E2E;
+    }
+}
+
+.link-red {
+    border-radius: 8px;
+    background: #CF2E2E;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+    height: 48px;
+    width: 120px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    li {
+        color: #BDBDBD;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+    }
+
+    li.active {
+        color: #121111;
     }
 }
 
@@ -243,6 +296,14 @@ body.dark-theme {
         color: #fff;
     }
 
+    .main_title_2 {
+        color: #fff;
+    }
+
+    .description {
+        color: #fff;
+    }
+
     .edit_link {
         border: 1px solid #4D4C4C;
 
@@ -344,6 +405,19 @@ body.dark-theme {
 
 
 @media only screen and (max-width: 992px) {
+    .main_title {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px;
+    }
+
+    .main_title_2 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+    }
+
     .auth_title {
         font-size: 24px;
         font-style: normal;

@@ -4,7 +4,7 @@
             <div class="modal_content">
                 <slot></slot>
             </div>
-            <button class="modal_close">
+            <button class="modal_close" @click="$emit('update:show', false)">
                 <img src="@/assets/images/close.svg" alt="">
             </button>
         </div>
@@ -13,11 +13,15 @@
 
 <script>
 export default {
-    name: "ModalDialog"
+    name: "ModalDialog",
+    props: {
+        show: Boolean,
+    },
+    emits: ['update:show']
 }
 </script>
 
-<style>
+<style lang="scss">
 .modal_wrapper {
     position: fixed;
     top: 0;
@@ -29,18 +33,26 @@ export default {
     justify-content: center;
     background: rgba(0, 0, 0, 0.50);
     z-index: 2;
+    
+    .modal_content_wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .modal_content {
+        background: #fff;
+        border-radius: 16px;
+        background: #FFF;
+        padding: 20px;
+    }
 }
 
-.modal_wrapper .modal_content_wrapper {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.modal_wrapper .modal_content {
-    background: #fff;
-    border-radius: 16px;
-    background: #FFF;
-    padding: 20px;
+.dark-theme {
+    .modal_wrapper {
+        .modal_content {
+            background: #222222;
+        }
+    }
 }
 </style>
