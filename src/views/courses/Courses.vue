@@ -44,7 +44,7 @@ export default {
                 {id: 2, title: 'Сценарий продающего вебинара', img: '1_2', degree_title: "3 из 15 уроков пройдено", degree: '20%'},
                 {id: 3, title: 'Продающие диагностики', img: '1_3', degree_title: "0 из 15 уроков пройдено", degree: '20%'},
             ],
-            show_course_modal: true,
+            show_course_modal: false,
         }
     },
     methods: {
