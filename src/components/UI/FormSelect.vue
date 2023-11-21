@@ -71,59 +71,48 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .form_select_wrapper {
     position: relative;
-}
 
-.form_select_wrapper label {
-    color: #A6A5A5;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway" sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 14px;
-    margin-bottom: 4px;
-    display: block;
-}
+    label {
+        color: #A6A5A5;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Raleway" sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 14px;
+        margin-bottom: 4px;
+        display: block;
+    }
+    
+    .select_button {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #D3D2D2;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 12px 12px 13px;
 
-.form_select_wrapper .select_button {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid #D3D2D2;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 12px 12px 13px;
-}
-
-.dark-theme .form_select_wrapper .select_button {
-    border: 1px solid #4D4C4C;
+        span {
+            color: #121111;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 22px;
+        }
+    }
+    
 }
 
 .form_select_wrapper.active .select_button {
     border-radius: 12px 12px 0 0;
     border-bottom: 0px;
-}
-
-.form_select_wrapper .select_button span {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-.dark-theme .form_select_wrapper .select_button span {
-    color: #fff;
-}
-
-.dark-theme .form_select_wrapper .select_button svg path {
-    stroke: #fff;
 }
 
 .select_options {
@@ -135,65 +124,82 @@ export default {
     border: 1px solid #D3D2D2;
     border-radius: 0 0 16px 16px;
     overflow: hidden;
+    
+    button {
+        background: white;
+        height: 48px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 13px;
+
+        &:hover {
+            background: #F6F6F6;
+        }
+        
+        span {
+            color: #121111;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 22px;
+        }
+    }
+    
+    button.active {
+        background: #F6F6F6;
+    }
+    
+    .border_bottom {
+        border-bottom: 1px solid #d6d5d5;
+    }
 }
 
-.dark-theme .select_options {
-    border: 1px solid #4D4C4C;
-}
 
-.select_options button {
-    background: white;
-    height: 48px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 13px;
-}
+.dark-theme {
+    .form_select_wrapper {
+        .select_button {
+            border: 1px solid #4D4C4C;
 
-.dark-theme .select_options button {
-    background: #222222;
-}
+            span {
+                color: #fff;
+            }
 
-.select_options button.active {
-    background: #F6F6F6;
-}
+            svg path {
+                stroke: #fff;
+            }
+        }
+    }
 
-.dark-theme .select_options button.active {
-    background: #3B3B3B;
-}
+    .select_options {
+        border: 1px solid #4D4C4C;
 
-.select_options button:hover {
-    background: #F6F6F6;
-}
+        button {
+            background: #222222;
 
-.dark-theme .select_options button:hover {
-    background: #3B3B3B;
-}
+            &:hover {
+                background: #3B3B3B;
+            }
 
-.select_options button span {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-.dark-theme .select_options button span {
-    color: #fff;
-}
-
-.dark-theme .select_options button svg path {
-    fill: #fff;
-}
-
-.select_options .border_bottom {
-    border-bottom: 1px solid #d6d5d5;
-}
-
-.dark-theme .select_options .border_bottom {
-    border-bottom: 1px solid #4D4C4C;
+            span {
+                color: #fff;
+            }
+            
+            svg path {
+                fill: #fff;
+            }
+        }
+        
+        button.active {
+            background: #3B3B3B;
+        }
+        
+        .border_bottom {
+            border-bottom: 1px solid #4D4C4C;
+        }
+    }
 }
 </style>

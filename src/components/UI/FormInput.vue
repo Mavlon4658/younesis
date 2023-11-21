@@ -56,39 +56,38 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .input_wrapper {
     display: flex;
     flex-direction: column;
     gap: 4px;
-}
-
-.input_wrapper label {
-    color: #A6A5A5;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 14px;
-}
-
-.input_wrapper input {
-    border-radius: 12px;
-    border: 1px solid #D3D2D2;
-    height: 48px;
-    padding: 0px 13px;
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-.input_wrapper input:focus {
-    border: 1px solid #CF2E2E;
+    label {
+        color: #A6A5A5;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Raleway", sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 14px;
+    }
+    
+    input {
+        border-radius: 12px;
+        border: 1px solid #D3D2D2;
+        height: 48px;
+        padding: 0px 13px;
+        color: #121111;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+    }
+    
+    input:focus {
+        border: 1px solid #CF2E2E;
+    }
 }
 
 .dark-theme .input_wrapper input {
