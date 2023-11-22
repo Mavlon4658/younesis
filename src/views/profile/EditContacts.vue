@@ -32,61 +32,62 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .edit_contact {
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    .subtitle {
+        color: $color-19;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        margin-top: 4px;
+    }
+
+    .switch_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+
+        .text {
+            color: $color-2;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+        }
+    }
 }
 
-.edit_contact .subtitle {
-    color: #727272;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 14px;
-    margin-top: 4px;
+.dark-theme .edit_contact {
+    .subtitle {
+        color: $color-13;
+    }
+
+    .switch_wrapper .text {
+        color: $color-1;
+    }
 }
 
-.dark-theme .edit_contact .subtitle {
-    color: #4D4C4C;
-}
 
-.edit_contact .switch_wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 16px;
-}
 
-.edit_contact .switch_wrapper .text {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-}
-
-.dark-theme .edit_contact .switch_wrapper .text {
-    color: #fff;
-}
 
 @media only screen and (max-width: 992px) {
     .edit_contact {
         margin-top: 8px;
         gap: 24px;
-    }
 
-    .edit_contact .subtitle {
-        margin-top: 8px;
-    }
-
-    .edit_contact .switch_wrapper {
-        margin-top: 8px;
+        .subtitle {
+            margin-top: 8px;
+        }
+    
+        .switch_wrapper {
+            margin-top: 8px;
+        }
     }
 }
 </style>

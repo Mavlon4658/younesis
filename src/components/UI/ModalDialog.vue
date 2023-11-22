@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/_variables.scss';
+
 .modal_wrapper {
     position: fixed;
     top: 0;
@@ -41,9 +43,9 @@ export default {
     }
     
     .modal_content {
-        background: #fff;
+        background: $color-1;
         border-radius: 16px;
-        background: #FFF;
+        background: $color-1;
         padding: 20px;
     }
 }
@@ -51,7 +53,7 @@ export default {
 .dark-theme {
     .modal_wrapper {
         .modal_content {
-            background: #222222;
+            background: $color-15;
         }
     }
 }

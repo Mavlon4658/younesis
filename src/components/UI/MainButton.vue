@@ -23,11 +23,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .main_button {
     border-radius: 12px;
-    background: #CF2E2E;
-    color: #FFF;
+    background: $color-5;
+    color: $color-1;
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
@@ -40,8 +42,8 @@ export default {
     padding: 0px 14px;
     background: transparent;
     border-radius: 10px;
-    border: 1px solid #D3D2D2;
-    color: #121111;
+    border: 1px solid $color-4;
+    color: $color-2;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
@@ -52,12 +54,12 @@ export default {
 }
 
 .main_button.text-red {
-    color: #CF2E2E;
+    color: $color-5;
     font-weight: 600;
 }
 
 .dark-theme .main_button.light {
-    border: 1px solid #4D4C4C;
-    color: #fff;
+    border: 1px solid $color-13;
+    color: $color-1;
 }
 </style>

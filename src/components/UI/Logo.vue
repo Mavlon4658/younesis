@@ -11,24 +11,28 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .logotip {
     display: inline-flex;
     width: 128px;
     height: 32px;
     align-items: flex-end;
     justify-content: flex-end;
+
+    .dark {
+        display: none;
+    }
 }
 
-.logotip .dark {
-    display: none;
-}
+.dark-theme .logotip {
+    .light {
+        display: none;
+    }
 
-.dark-theme .logotip .light {
-    display: none;
-}
-
-.dark-theme .logotip .dark {
-    display: block;
+    .dark {
+        display: block;
+    }
 }
 </style>

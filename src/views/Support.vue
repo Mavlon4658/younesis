@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style>
+@import '@/assets/_variables.scss';
+
 .support_content {
     padding: 20px;
     width: 400px;

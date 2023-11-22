@@ -117,7 +117,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .profile_content {
     padding: 20px;
     display: flex;
@@ -131,220 +133,152 @@ export default {
 
 .user_data {
     border-radius: 16px;
-    background: #F6F6F6;
+    background: $color-7;
     padding: 20px;
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
-}
-
-.dark-theme .user_data {
-    background: #222222;
-}
-
-.user_data img {
-    width: 128px;
-    height: 128px;
-    object-fit: cover;
-}
-
-.user_data .name {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    margin-bottom: 14px;
-}
-
-.dark-theme .user_data .name {
-    color: #fff;
-}
-
-.user_data .description {
-    color: #A6A5A5;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-.dark-theme .user_data .description {
-    color: #A6A5A5;
+    
+    img {
+        width: 128px;
+        height: 128px;
+        object-fit: cover;
+    }
+    
+    .name {
+        color: $color-2;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 14px;
+    }
+    
+    .description {
+        color: $color-11;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+    }
 }
 
 .experience {
     border-radius: 16px;
-    background: #171717;
+    background: $color-3;
     padding: 20px;
     margin-bottom: 20px;
+
+    .title {
+        color: $color-1;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
 }
 
-.dark-theme .experience {
-    background: #222222;
-}
-
-.experience .title {
-    color: #FFF;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    margin-bottom: 16px;
-}
 
 .professions {
     display: flex;
     align-items: flex-start;
     gap: 8px;
     overflow-x: scroll;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .item {
+        border-radius: 22px;
+        background: $color-18;
+        padding: 6px 12px;
+        color: $color-1;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+    }
 }
 
-.professions::-webkit-scrollbar {
-    display: none;
-}
-
-.professions .item {
-    border-radius: 22px;
-    background: #4B4B4B;
-    padding: 6px 12px;
-    color: #FFF;
-    text-align: center;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-}
 
 .my_projects_wrapper {
     border-radius: 16px;
-    background: #F6F6F6;
+    background: $color-7;
     padding: 20px;
     margin-bottom: 20px;
-}
-
-.dark-theme .my_projects_wrapper {
-    background: #222222;
-}
-
-.my_projects_wrapper .title {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    margin-bottom: 16px;
-}
-
-.dark-theme .my_projects_wrapper .title {
-    color: #fff;
+    
+    .title {
+        color: $color-2;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
 }
 
 .my_projects {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-}
-
-.my_projects .item {
-    border-radius: 4px;
-    background: #FFF;
-    object-fit: cover;
-    height: 171px;
-    width: calc(100% / 3 - 16px / 3);
-}
-
-.dark-theme .my_projects .item {
-    background: #171717;
+    
+    .item {
+        border-radius: 4px;
+        background: $color-1;
+        object-fit: cover;
+        height: 171px;
+        width: calc(100% / 3 - 16px / 3);
+    }
+    
+    
 }
 
 .social_networks_wrapper {
     border-radius: 16px;
-    background: #F6F6F6;
+    background: $color-7;
     padding: 20px;
     margin-bottom: 20px;
+    
+    .description {
+        color: $color-6;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    .social_networks {
+        margin-bottom: 24px;
+    
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .item.active {
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid $color-16;
+        }
+        
+        .name {
+            color: $color-19;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+        }
+        
+        .value {
+            color: $color-5;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+            text-decoration: none;
+        }
+    }
 }
 
-.dark-theme .social_networks_wrapper {
-    background: #222222;
-}
-
-.social_networks {
-    margin-bottom: 24px;
-}
-
-
-.social_networks .item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.social_networks .item.active {
-    padding-bottom: 12px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid #F3EFEF;
-}
-
-.dark-theme .social_networks .item.active {
-    border-bottom: 1px solid #2B2B2B;
-}
-
-.social_networks .name {
-    color: #727272;
-    text-align: center;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-.dark-theme .social_networks .name {
-    color: #fff;
-}
-
-.social_networks .value {
-    color: #CF2E2E;
-    text-align: center;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 22px;
-    text-decoration: none;
-}
-
-.dark-theme .social_networks .value {
-    color: #fff;
-}
-
-.social_networks_wrapper .description {
-    color: #BDBDBD;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-}
-
-.dark-theme .social_networks_wrapper .description {
-    color: #4D4C4C;
-}
 
 .profile_links {
     display: flex;
@@ -354,7 +288,7 @@ export default {
 
 .profile_links .main_button.light,
 .dark-theme .profile_links .main_button.light {
-    color: #FF3F48;
+    color: $color-21;
 }
 
 .profile_left_head {
@@ -365,6 +299,62 @@ export default {
     display: none;
 }
 
+.dark-theme .user_data {
+    background: $color-15;
+}
+
+.dark-theme {
+    .user_data {
+        .name {
+            color: $color-1;
+        }
+    
+        .description {
+            color: $color-11;
+        }
+    }
+
+    .experience {
+        background: $color-15;
+    }
+
+    .my_projects_wrapper {
+        background: $color-15;
+        
+        .title {
+            color: $color-1;
+        }
+    }
+    
+    .my_projects .item {
+        background: $color-3;
+    }
+    
+    .social_networks_wrapper {
+        background: $color-15;
+        
+        .description {
+            color: $color-13;
+        }
+    }
+
+    .social_networks {
+        .item.active {
+            border-bottom: 1px solid $color-17;
+        }
+        
+        .name {
+            color: $color-1;
+        }
+        
+        .value {
+            color: $color-1;
+        }
+    
+    }
+}
+
+
 @media only screen and (max-width: 992px) {
     .profile_left {
         width: 100%;
@@ -372,10 +362,10 @@ export default {
 
     .profile_content {
         padding: 48px 16px 118px;
-    }
-
-    .profile_content .edit_link {
-        display: none;
+    
+        .edit_link {
+            display: none;
+        }
     }
 
     .profile_left_head {
@@ -388,7 +378,7 @@ export default {
 
     .dark-theme .profile_left_head .link svg path,
     .dark-theme .profile_left_head .link svg circle {
-        stroke: #fff;
+        stroke: $color-1;
     }
 
     .user_data {
@@ -397,53 +387,50 @@ export default {
         background: transparent !important;
         padding: 0;
         margin-bottom: 16px;
-    }
-
-    .user_data img {
-        width: 160px;
-        height: 160px;
-        border-radius: 24px;
-    }
-
-    .user_data .name {
-        text-align: center;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 28px;
-        margin-bottom: 8px;
-    }
-
-    .user_data .description {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 18px;
-        text-align: center;
-        width: 100%;
+    
+        img {
+            width: 160px;
+            height: 160px;
+            border-radius: 24px;
+        }
+    
+        .name {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            margin-bottom: 8px;
+        }
+    
+        .description {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            text-align: center;
+            width: 100%;
+        }
     }
 
     .experience {
         padding: 16px 0;
         margin-bottom: 16px;
-    }
-
-    .experience .title {
-        padding-left: 16px;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 22px;
-        margin-bottom: 8px;
+    
+        .title {
+            padding-left: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            margin-bottom: 8px;
+        }
     }
 
     .professions {
         gap: 4px;
         padding: 0px 16px;
-    }
-
-    .professions .item {
-        white-space: nowrap;
+    
+        .item {
+            white-space: nowrap;
+        }
     }
 
     .my_projects_wrapper {
@@ -453,74 +440,67 @@ export default {
     .link_to_project_wrapper {
         display: block;
         border-radius: 16px;
-        background: #CF2E2E;
+        background: $color-5;
         padding: 16px;
         margin-bottom: 16px;
-    }
-
-    .link_to_project_wrapper .title {
-        color: #FFF;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: "Raleway", sans-serif;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 22px;
-        margin-bottom: 12px;
+    
+        .title {
+            color: $color-1;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            margin-bottom: 12px;
+        }
     }
 
     .project_links {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-    }
-
-    .project_links a {
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.32);
-        padding: 8px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        text-decoration: none;
-    }
-
-    .project_links a span {
-        color: #FFF;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: "Raleway", sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 18px;
+    
+        a {
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            text-decoration: none;
+        
+            span {
+                color: $color-1;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 18px;
+            }
+        }
     }
 
     .social_networks_wrapper {
         padding: 0;
         background: transparent !important;
         margin-bottom: 0;
-    }
-
-    .social_networks .name {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 18px;
-    }
     
-    .social_networks .value {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 18px;
+        .description {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+        }
     }
 
-    .social_networks_wrapper .description {
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 14px;
+    .social_networks {
+        .name {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+        }
+        
+        .value {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+        }
     }
 
     .profile_links {

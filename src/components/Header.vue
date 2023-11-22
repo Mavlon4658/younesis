@@ -108,7 +108,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 header {
     height: 100%;
     display: flex;
@@ -130,44 +132,36 @@ header {
     text-decoration: none;
     gap: 8px;
     margin-bottom: 22px;
-}
 
-.header_link .link_title {
-    color: #727272;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 22px;
-}
+    .link_title {
+        color: $color-19;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22px;
+    }
 
-.dark-theme .header_link .link_title {
-    color: #D3D2D2;
-}
-
-.header_link .icon svg path,
-.header_link .icon svg circle {
-    stroke: #727272;
-}
-
-.dark-theme .header_link .icon svg path,
-.dark-theme .header_link .icon svg circle {
-    stroke: #D3D2D2;
+    .icon {
+        svg {
+            path,
+            circle {
+                stroke: $color-19;
+            }
+        }
+    }
 }
 
 .header_link_wrapper.active .header_link {
     border-radius: 12px;
-    background: #CF2E2E;
-}
+    background: $color-5;
 
-.header_link_wrapper.active .header_link .link_title {
-    color: #fff;
-}
+    .link_title {
+        color: $color-1;
+    }
 
-.header_link_wrapper.active .header_link svg path,
-.header_link_wrapper.active .header_link svg circle {
-    stroke: #fff;
+    svg path,
+    svg circle {
+        stroke: $color-1;
+    }
 }
 
 .header_link_wrapper.mobile {
@@ -177,12 +171,28 @@ header {
 .header_line {
     width: 100%;
     height: 1px;
-    background: #F3EFEF;
+    background: $color-16;
     margin: 10px 0 32px;
 }
 
-.dark-theme .header_line {
-    background: #2B2B2B;
+.dark-theme {
+    .header_link {
+        .link_title {
+            color: $color-4;
+        }
+        
+        .icon {
+            svg {
+                path, circle {
+                    stroke: $color-4;
+                }
+            }
+        }
+    }
+
+    .header_line {
+        background: $color-17;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -215,18 +225,21 @@ header {
         display: none;
     }
 
-    .header_link .link_title {
-        display: none;
+    .header_link {
+        .link_title {
+            display: none;
+        }
+
+        .icon svg {
+            width: 24px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
-    .header_link .icon svg {
-        width: 24px;
-        height: auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 
     .support_chat_wrapper {
         display: none;

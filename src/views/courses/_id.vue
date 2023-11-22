@@ -163,6 +163,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/_variables.scss';
+
 .lesson_content {
     padding: 20px;
 
@@ -184,7 +186,7 @@ export default {
         .video {
             width: 100%;
             border-radius: 16px;
-            background: #F6F6F6;
+            background: $color-7;
             overflow: hidden;
             position: relative;
             margin-bottom: 32px;
@@ -231,7 +233,7 @@ export default {
 
         .download_materials {
             border-radius: 16px;
-            background: #F6F6F6;
+            background: $color-7;
             padding: 16px;
             max-width: 555px;
             margin-bottom: 32px;
@@ -252,7 +254,7 @@ export default {
                 justify-content: space-between;
                 width: 100%;
                 border-radius: 8px;
-                background: #FFF;
+                background: $color-1;
                 padding: 12px;
                 text-decoration: none;
             }
@@ -264,7 +266,7 @@ export default {
 
                 .title {
                     overflow: hidden;
-                    color: #121111;
+                    color: $color-2;
                     text-overflow: ellipsis;
                     font-size: 14px;
                     font-weight: 500;
@@ -275,7 +277,7 @@ export default {
 
         .home_work {
             border-radius: 16px;
-            background: #F6F6F6;
+            background: $color-7;
             padding: 16px;
             max-width: 555px;
             margin-bottom: 32px;
@@ -283,7 +285,7 @@ export default {
             overflow: hidden;
 
             .subtitle {
-                color: #BDBDBD;
+                color: $color-6;
                 font-size: 16px;
                 font-weight: 500;
                 line-height: 22px;
@@ -334,13 +336,13 @@ export default {
         flex-direction: column;
         gap: 8px;
         padding-bottom: 16px;
-        border-bottom: 1px solid #F3EFEF;
+        border-bottom: 1px solid $color-16;
         margin-bottom: 24px;
 
         .item {
             border-radius: 12px;
             opacity: 0.4;
-            background:  #F6F6F6;
+            background:  $color-7;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -352,7 +354,7 @@ export default {
             }
 
             .task_title {
-                color: #121111;
+                color: $color-2;
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 18px;
@@ -381,7 +383,7 @@ export default {
             }
 
             .task_title {
-                color: #A6A5A5;
+                color: $color-11;
             }
         }
     }
@@ -399,7 +401,7 @@ export default {
             left: 0;
             height: 200px;
             width: 100%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 77.24%, #FFF 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 77.24%, $color-1 100%);
         }
     }
 }
@@ -408,7 +410,7 @@ export default {
     .lessons_row {
         .left {
             .video {
-                background: #222222;
+                background: $color-15;
 
                 .play {
                     svg.dark {
@@ -422,30 +424,30 @@ export default {
             }
 
             .description {
-                color: #FFF;
+                color: $color-1;
             }
 
             .download_materials {
-                background: #222222;
+                background: $color-15;
             }
 
             .materials {
                 .items {
-                    background: #3B3B3B;
+                    background: $color-2;
                 }
 
                 .text {
                     .title {
-                        color: #fff;
+                        color: $color-1;
                     }
                 }
             }
 
             .home_work {
-                background: #222222;
+                background: $color-15;
 
                 .subtitle {
-                    color: #A6A5A5;
+                    color: $color-11;
                 }
             }
         }
@@ -454,14 +456,14 @@ export default {
             border-bottom: 0px;
 
             .item {
-                background:  #222222;
+                background:  $color-15;
 
                 .task_title {
-                    color: #A6A5A5;
+                    color: $color-11;
                 }
                 .chevron {
                     path {
-                        stroke: #fff;
+                        stroke: $color-1;
                     }
                 }
             }
@@ -469,7 +471,7 @@ export default {
 
             .item.done {
                 .task_title {
-                    color: #A6A5A5;
+                    color: $color-11;
                 }
             }
         }
@@ -478,7 +480,7 @@ export default {
             .main_button {
                 svg {
                     path {
-                        stroke: #fff;
+                        stroke: $color-1;
                     }
                 }
             }
@@ -487,7 +489,7 @@ export default {
         .tasks_wrapper.hide {
 
             &::after {
-                background: linear-gradient(180deg, rgba(23, 23, 23, 0.00) 77.24%, #171717 100%);
+                background: linear-gradient(180deg, rgba(23, 23, 23, 0.00) 77.24%, $color-3 100%);
             }
         }
     }
@@ -497,7 +499,7 @@ export default {
     .lesson_wrap {
         position: relative;
         z-index: 4;
-        background: #fff;
+        background: $color-1;
         margin: 0;
         padding: 0;
     }
@@ -529,7 +531,7 @@ export default {
         .page_name {
             position: absolute;
             display: block;
-            color: #121111;
+            color: $color-2;
             font-size: 16px;
             font-weight: 700;
             line-height: 22px;
@@ -541,12 +543,12 @@ export default {
 
     .dark-theme {
         .lesson_wrap {
-            background: #171717;
+            background: $color-3;
         }
 
         .lesson_content {
             .page_name {
-                color: #fff;
+                color: $color-1;
             }
         }
     }

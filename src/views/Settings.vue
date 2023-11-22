@@ -90,54 +90,57 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .settings_content {
     padding: 20px;
     width: 350px;
+    
+    .settings {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        border-bottom: 1px solid $color-16;
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .title {
+            color: $color-2;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+        }
+    }
+    
+    .border-none {
+        border-bottom: 0px !important;
+    }
 }
 
-.settings_content .settings {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
-    border-bottom: 1px solid #F3EFEF;
-}
+.dark-theme {
+    .settings_content {
+        .settings {
+            border-bottom: 1px solid $color-17;
+            
+            .title {
+                color: $color-1;
+            }
 
-.dark-theme .settings_content .settings {
-    border-bottom: 1px solid #2B2B2B;
-}
+            svg path {
+                stroke: $color-1;
+            }
 
-.settings_content .border-none {
-    border-bottom: 0px !important;
-}
-
-.settings_content .settings .left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.settings_content .settings .title {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-}
-
-.dark-theme .settings_content .settings .title {
-    color: #fff;
-}
-
-.dark-theme .settings_content .settings svg path {
-    stroke: #fff;
-}
-
-.dark-theme .settings_content .settings .left svg path {
-    stroke: #4D4D4D;
+            .left svg path {
+                stroke: $color-20;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 992px) {

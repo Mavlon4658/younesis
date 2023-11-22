@@ -72,15 +72,14 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/_variables.scss';
+
 .form_select_wrapper {
     position: relative;
 
     label {
-        color: #A6A5A5;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: "Raleway" sans-serif;
+        color: $color-11;
         font-size: 12px;
-        font-style: normal;
         font-weight: 600;
         line-height: 14px;
         margin-bottom: 4px;
@@ -90,7 +89,7 @@ export default {
     .select_button {
         width: 100%;
         border-radius: 12px;
-        border: 1px solid #D3D2D2;
+        border: 1px solid $color-4;
         height: 48px;
         display: flex;
         align-items: center;
@@ -98,11 +97,8 @@ export default {
         padding: 12px 12px 12px 13px;
 
         span {
-            color: #121111;
-            font-variant-numeric: lining-nums proportional-nums;
-            font-family: "Raleway", sans-serif;
+            color: $color-2;
             font-size: 16px;
-            font-style: normal;
             font-weight: 500;
             line-height: 22px;
         }
@@ -121,12 +117,12 @@ export default {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    border: 1px solid #D3D2D2;
+    border: 1px solid $color-4;
     border-radius: 0 0 16px 16px;
     overflow: hidden;
     
     button {
-        background: white;
+        background: $color-1;
         height: 48px;
         width: 100%;
         display: flex;
@@ -135,26 +131,23 @@ export default {
         padding: 0px 13px;
 
         &:hover {
-            background: #F6F6F6;
+            background: $color-7;
         }
         
         span {
-            color: #121111;
-            font-variant-numeric: lining-nums proportional-nums;
-            font-family: "Raleway", sans-serif;
+            color: $color-2;
             font-size: 16px;
-            font-style: normal;
             font-weight: 500;
             line-height: 22px;
         }
     }
     
     button.active {
-        background: #F6F6F6;
+        background: $color-7;
     }
     
     .border_bottom {
-        border-bottom: 1px solid #d6d5d5;
+        border-bottom: 1px solid $color-14;
     }
 }
 
@@ -162,43 +155,43 @@ export default {
 .dark-theme {
     .form_select_wrapper {
         .select_button {
-            border: 1px solid #4D4C4C;
+            border: 1px solid $color-13;
 
             span {
-                color: #fff;
+                color: $color-1;
             }
 
             svg path {
-                stroke: #fff;
+                stroke: $color-1;
             }
         }
     }
 
     .select_options {
-        border: 1px solid #4D4C4C;
+        border: 1px solid $color-13;
 
         button {
-            background: #222222;
+            background: $color-15;
 
             &:hover {
-                background: #3B3B3B;
+                background: $color-12;
             }
 
             span {
-                color: #fff;
+                color: $color-1;
             }
             
             svg path {
-                fill: #fff;
+                fill: $color-1;
             }
         }
         
         button.active {
-            background: #3B3B3B;
+            background: $color-12;
         }
         
         .border_bottom {
-            border-bottom: 1px solid #4D4C4C;
+            border-bottom: 1px solid $color-13;
         }
     }
 }

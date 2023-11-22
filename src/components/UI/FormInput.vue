@@ -57,42 +57,39 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/_variables.scss';
+
 .input_wrapper {
     display: flex;
     flex-direction: column;
     gap: 4px;
+
     label {
-        color: #A6A5A5;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: "Raleway", sans-serif;
+        color: $color-11;
         font-size: 12px;
-        font-style: normal;
         font-weight: 600;
         line-height: 14px;
     }
     
     input {
         border-radius: 12px;
-        border: 1px solid #D3D2D2;
+        border: 1px solid $color-4;
         height: 48px;
         padding: 0px 13px;
-        color: #121111;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: "Raleway", sans-serif;
+        color: $color-2;
         font-size: 16px;
-        font-style: normal;
         font-weight: 500;
         line-height: 22px;
     }
     
     input:focus {
-        border: 1px solid #CF2E2E;
+        border: 1px solid $color-5;
     }
 }
 
 .dark-theme .input_wrapper input {
-    color: #fff;
-    border: 1px solid #4D4C4C;
+    color: $color-1;
+    border: 1px solid $color-13;
 }
 
 @media only screen and (max-width: 992px) {

@@ -72,7 +72,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .marketplace .card {
     height: 400px !important;
 }
@@ -80,10 +82,10 @@ export default {
 @media only screen and (max-width: 992px) {
     .marketplace .card {
         height: 104px !important;
-    }
-    
-    .marketplace .card .card_right .main_button {
-        display: none;
+
+        .card_right .main_button {
+            display: none;
+        }
     }
 }
 </style>

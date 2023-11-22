@@ -18,35 +18,37 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .switch_btn {
     width: 40px;
     height: 24px;
-    background: #D3D2D2;
+    background: $color-4;
     border-radius: 40px;
     padding: 2px;
     transition: .2s ease all;
-}
 
-.dark-theme .switch_btn {
-    background: #4D4C4C;
+    span {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: block;
+        background: $color-1;
+        transition: .2s ease all;
+        margin-left: 0;
+    }
 }
 
 .switch_btn.active {
-    background: #CF2E2E;
+    background: $color-5 !important;
+
+    span {
+        margin-left: 16px;
+    }
 }
 
-.switch_btn span {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: block;
-    background: white;
-    transition: .2s ease all;
-    margin-left: 0;
-}
-
-.switch_btn.active span {
-    margin-left: 16px;
+.dark-theme .switch_btn {
+    background: $color-13;
 }
 </style>

@@ -56,83 +56,80 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .deit_lins_to_projects {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    .item {
+        border-radius: 16px;
+        background: $color-7;
+        padding: 16px;
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    
+        .title {
+            color: $color-2;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        button {
+            color: $color-21;
+            text-align: right;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+        }
+    }
+    
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .empty_text {
+        color: $color-19;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+    
+    .add_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        margin: 24px auto 0;
+    }
 }
 
-.deit_lins_to_projects .item {
-    border-radius: 16px;
-    background: #F6F6F6;
-    padding: 16px;
-}
 
-.dark-theme .deit_lins_to_projects .item {
-    background: #222222;
-}
+.dark-theme {
+    .deit_lins_to_projects {
+        .item {
+            background: $color-15;
+        }
+    
+        .head .title {
+            color: $color-1;
+        }
 
-.deit_lins_to_projects .head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-}
-
-.deit_lins_to_projects .head .title {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-}
-
-.dark-theme .deit_lins_to_projects .head .title {
-    color: #fff;
-}
-
-.deit_lins_to_projects .head button {
-    color: #FF3F48;
-    text-align: right;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-}
-
-.deit_lins_to_projects .inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.deit_lins_to_projects .empty_text {
-    color:#727272;
-    text-align: center;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-.dark-theme .deit_lins_to_projects .empty_text {
-    color: #D3D2D2;
-}
-
-.deit_lins_to_projects .add_button {
-    width: 194px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    margin: 24px auto 0;
+        .empty_text {
+            color: $color-4;
+        }
+    }
 }
 
 @media only screen and (max-width: 992px) {

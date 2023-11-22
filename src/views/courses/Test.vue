@@ -216,6 +216,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/_variables.scss';
+
 .test_content {
     padding: 20px;
     width: 595px;
@@ -228,14 +230,14 @@ export default {
             height: 96px;
             border-radius: 50%;
             margin: 12px auto 32px;
-            background: #DEDEDE;
+            background: $color-8;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .description {
-            color: #727272;
+            color: $color-19;
             text-align: center;
             font-size: 16px;
             font-weight: 500;
@@ -264,17 +266,17 @@ export default {
     align-items: center;
     justify-content: space-between;
     border-radius: 8px;
-    background: #F6F6F6;
+    background: $color-7;
     padding: 4px;
     gap: 4px;
     margin: 32px 0;
 
     button {
         border-radius: 4px;
-        background: #FFF;
+        background: $color-1;
         height: 40px;
         width: 100%;
-        color: #121111;
+        color: $color-2;
         text-align: center;
         font-size: 14px;
         font-weight: 600;
@@ -282,12 +284,12 @@ export default {
     }
 
     button.checked {
-        color: #727272;
+        color: $color-19;
     }
 
     button.active {
-        border: 1px solid #CF2E2E;
-        color: #121111;
+        border: 1px solid $color-5;
+        color: $color-2;
     }
 }
 
@@ -306,17 +308,17 @@ export default {
 
         button {
             border-radius: 16px;
-            background: #F6F6F6;
+            background: $color-7;
             padding: 16px;
             text-align: left;
-            color: #121111;
+            color: $color-2;
             font-size: 16px;
             font-weight: 500;
             line-height: 22px;
         }
 
         button.active {
-            border: 1px solid #CF2E2E;
+            border: 1px solid $color-5;
         }
     }
 }
@@ -343,38 +345,38 @@ export default {
     .test_content {
         .modal {
             .warning {
-                background: #3B3B3B;
+                background: $color-12;
             }
 
             .description {
-                color: #D3D2D2;
+                color: $color-4;
             }
         }
     }
 
     .test_buttons {
-        background: #222222;
+        background: $color-15;
 
         button {
-            background: #3B3B3B;
-            color: #fff;
+            background: $color-12;
+            color: $color-1;
         }
 
         button.checked {
-            color: #A6A5A5;
+            color: $color-11;
         }
 
         button.active {
-            border: 1px solid #CF2E2E;
-            color: #A6A5A5;
+            border: 1px solid $color-5;
+            color: $color-11;
         }
     }
 
     .answers {
         .answer_list {
             button {
-                background: #222222;
-                color: #fff;
+                background: $color-15;
+                color: $color-1;
             }
         }
     }
@@ -414,7 +416,7 @@ export default {
 
         .close_test {
             border-radius: 10px;
-            background: #F6F6F6;
+            background: $color-7;
             min-width: 48px;
             height: 48px;
             display: flex;
@@ -438,7 +440,7 @@ export default {
         }
 
         button.active {
-            border: 1px solid #CF2E2E;
+            border: 1px solid $color-5;
         }
     }
 
@@ -488,11 +490,11 @@ export default {
     .dark-theme {
         .test_button_wrapper {
             .close_test {
-                background: #222222;
+                background: $color-15;
 
                 svg {
                     path {
-                        stroke: #fff;
+                        stroke: $color-1;
                     }
                 }
             }
@@ -502,7 +504,7 @@ export default {
             .text-red {
                 svg {
                     path {
-                        stroke: #fff;
+                        stroke: $color-1;
                     }
                 }
             }

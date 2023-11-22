@@ -75,7 +75,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .home_content {
   padding: 20px;
   display: flex;
@@ -86,7 +88,7 @@ export default {
 
 .home_card_1 {
   border-radius: 16px;
-  background: #171717;
+  background: $color-3;
   overflow: hidden;
   position: relative;
   width: 555px;
@@ -98,107 +100,95 @@ export default {
   padding-bottom: 35px;
   gap: 8px;
   order: 1;
+
+  .img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .img.mobile {
+    display: none;
+  }
+  
+  .title {
+    position: relative;
+    color: $color-1;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  
+  .subtitle {
+    color: $color-1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    position: relative;
+    max-width: 325px;
+  }
 }
 
 .dark-theme .home_card_1 {
-  background: #222;
-}
-
-.home_card_1 img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.home_card_1 img.mobile {
-  display: none;
-}
-
-.home_card_1 .title {
-  position: relative;
-  color: #FFF;
-  text-align: center;
-  font-variant-numeric: lining-nums proportional-nums;
-  font-family: "Raleway", sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 40px;
-}
-
-.home_card_1 .subtitle {
-  color: #FFF;
-  text-align: center;
-  font-variant-numeric: lining-nums proportional-nums;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22px;
-  position: relative;
-  max-width: 325px;
+  background: $color-15;
 }
 
 .wheel_card {
   overflow: hidden;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 33.23%, rgba(255, 255, 255, 0.48) 100%), #CF2E2E;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 33.23%, rgba(255, 255, 255, 0.48) 100%), $color-5;
   width: 441px;
   height: 440px;
   padding: 40px 22px 0 23px;
   position: relative;
   order: 2;
-}
+  
+  .title {
+    color: $color-1;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 8px;
 
-.wheel_card .title {
-  color: #FFF;
-  text-align: center;
-  font-variant-numeric: lining-nums proportional-nums;
-  font-family: "Raleway", sans-serif;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 32px;
-  margin-bottom: 8px;
-}
-.wheel_card .title br {
-  display: none;
-}
-
-.wheel_card .subtitle {
-  color: #FFF;
-  text-align: center;
-  font-variant-numeric: lining-nums proportional-nums;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22px;
-  margin-bottom: 24px;
-}
-
-.wheel_card .btn {
-  border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.56);
-  background: linear-gradient(0deg, #FF6D2F 0%, #FFB802 100%);
-  color: #FFF;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 18px;
-  width: 186px;
-  height: 48px;
-  margin: 0 auto;
-  display: block;
-}
-
-.wheel_card img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+    br {
+      display: none;
+    }
+  }
+  
+  .subtitle {
+    color: $color-1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+  
+  .btn {
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.56);
+    background: linear-gradient(0deg, #FF6D2F 0%, #FFB802 100%);
+    color: $color-1;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    width: 186px;
+    height: 48px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 
 .stories {
@@ -210,26 +200,26 @@ export default {
 
 .story {
   border-radius: 16px;
-  border: 1px solid #CF2E2E;
+  border: 1px solid $color-5;
   padding: 1px;
   position: relative;
   width: 95px;
   height: 128px;
   cursor: pointer;
-}
-
-.story img {
-  position: absolute;
-  top: 1px;
-  height: 1px;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  object-fit: cover;
-  border-radius: 14px;
-}
-
-.story .story_title {
-  display: none;
+  
+  img {
+    position: absolute;
+    top: 1px;
+    height: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  
+  .story_title {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1650px) {
@@ -263,32 +253,30 @@ export default {
     width: 100%;
     height: 352px;
     padding-bottom: 33px;
-  }
-
-  .home_card_1 img {
-    display: none;
-  }
-
-  .home_card_1 img.mobile {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .home_card_1 .title {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    margin-bottom: 4px;
-  }
-
-  .home_card_1 .subtitle {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
+  
+    img {
+      display: none;
+    }
+  
+    img.mobile {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28px;
+      margin-bottom: 4px;
+    }
+  
+    .subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+    }
   }
 
   .wheel_card {
@@ -297,25 +285,22 @@ export default {
     border-radius: 24px;
     padding: 24px 21.5px;
     height: 372px;
-  }
-
-  .wheel_card .title {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-
-  }
-
-  .wheel_card .title br {
-    display: block;
-  }
-
-  .wheel_card .subtitle {
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 14px;
+  
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    
+      br {
+        display: block;
+      }
+    }
+  
+    .subtitle {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14px;
+    }
   }
   
   .stories {
@@ -326,21 +311,18 @@ export default {
   .story {
     width: calc(100% / 3 - 16px / 3);
     height: 120px;
-  }
-
-  .story .story_title {
-    display: block;
-    position: absolute;
-    left: 8px;
-    bottom: 8px;
-    width: calc(100% - 16px);
-    color: #FFF;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 8px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 10px;
+  
+    .story_title {
+      display: block;
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      width: calc(100% - 16px);
+      color: $color-1;
+      font-size: 8px;
+      font-weight: 700;
+      line-height: 10px;
+    }
   }
 }
 </style>

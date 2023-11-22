@@ -23,54 +23,55 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 nav {
     height: 96px;
+
+    .nav_content {
+        padding: 22px 26px 26px 20px;
+        border-bottom: 1px solid $color-16;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        left: 260px;
+        top: 0;
+        width: calc(100% - 260px);
+        background: $color-1;
+        z-index: 2;
+        height: 96px;
+    }
+
+    .user_panel {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+
+        .user_name {
+            color: $color-2;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+        }
+    }
 }
 
-nav .nav_content {
-    padding: 22px 26px 26px 20px;
-    border-bottom: 1px solid #F3EFEF;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    left: 260px;
-    top: 0;
-    width: calc(100% - 260px);
-    background: #fff;
-    z-index: 2;
-    height: 96px;
-}
+.dark-theme nav {
+    .nav_content {
+        background: $color-3;
+        border-bottom: 1px solid $color-17;
+    }
 
-.dark-theme nav .nav_content {
-    background: #171717;
-    border-bottom: 1px solid #2B2B2B;
-}
+    .user_panel .user_name {
+        color: $color-1;
 
-nav .user_panel {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-}
-
-nav .user_panel .user_name {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 22px;
-}
-
-.dark-theme nav .user_panel .user_name {
-    color: #fff;
-}
-
-.dark-theme nav .user_panel svg path {
-    stroke: #fff;
+        svg path {
+            stroke: $color-1;
+        }
+    }
 }
 
 @media only screen and (max-width: 992px) {

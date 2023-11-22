@@ -99,6 +99,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/_variables.scss';
+
 .diagnostics {
     width: 515px;
 
@@ -137,7 +139,7 @@ export default {
         .item {
             border-radius: 12px;
             opacity: 0.4;
-            background: #F6F6F6;
+            background: $color-7;
             padding: 16px;
             cursor: default;
             order: 2;
@@ -148,7 +150,7 @@ export default {
                 justify-content: space-between;
 
                 .title {
-                    color: #121111;
+                    color: $color-2;
                     font-size: 14px;
                     font-weight: 500;
                     line-height: 18px;
@@ -164,7 +166,7 @@ export default {
 
         .item.active {
             border-radius: 16px;
-            border: 1px solid var(--theme-day-border-border-01, #D3D2D2);
+            border: 1px solid $color-4;
             opacity: 1;
             cursor: pointer;
             background: transparent;
@@ -183,7 +185,7 @@ export default {
                 }
 
                 .value {
-                    color: #CF2E2E;
+                    color: $color-5;
                     font-size: 14px;
                     font-weight: 600;
                     line-height: 18px;
@@ -192,21 +194,21 @@ export default {
 
             .degree_line {
                 border-radius: 4px;
-                background: #ECECEC;
+                background: $color-10;
                 height: 8px;
                 width: 100%;
 
                 .line {
                     height: 8px;
                     border-radius: 4px;
-                    background: #CF2E2E;
+                    background: $color-5;
                 }
             }
         }
 
         .item.done {
             order: 3;
-            background: #F6F6F6;
+            background: $color-7;
             border: 0;
             opacity: 1;
 
@@ -227,34 +229,34 @@ export default {
     .diagnostics {
         .diagnostics_list {
             .item {
-                background: #171717;
+                background: $color-3;
 
                 .icon {
                     .chevron_right {
                         path {
-                            stroke: white;
+                            stroke: $color-1;
                         }
                     }
                 }
 
                 .item_text {
                     .title {
-                        color: #A6A5A5;
+                        color: $color-11;
                     }
                 }
             }
 
             .item.active {
-                border: 1px solid #4D4C4C;
+                border: 1px solid $color-13;
 
                 .degree {
                     .name, .value {
-                        color: white;
+                        color: $color-1;
                     }
                 }
 
                 .degree_line {
-                    background: #4B4B4B;
+                    background: $color-18;
                 }
             }
         }
@@ -285,7 +287,7 @@ export default {
                     position: absolute;
                     right: 16px;
                     margin-top: 61px;
-                    color: #FFF;
+                    color: $color-1;
                     font-size: 16px;
                     font-weight: 500;
                     line-height: 22px;

@@ -24,59 +24,65 @@ export default {
 }
 </script>
 
-<style>
-.edit_niches_wrapper .title {
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-    margin-bottom: 16px;
-}
+<style lang="scss">
+@import '@/assets/_variables.scss';
 
-.dark-theme .edit_niches_wrapper .title {
-    color: #fff;
-}
-
-.edit_niches_wrapper .role {
-    position: relative;
-    margin-bottom: 8px;
-}
-
-.edit_niches_wrapper .role input {
-    padding: 0px 44px 0 12px;
-}
-
-.edit_niches_wrapper .role label {
-    display: none;
-}
-
-.edit_niches_wrapper .role svg {
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.dark-theme .edit_niches_wrapper .role svg path {
-    stroke: #4D4D4D;
-}
-
-@media only screen and (max-width: 992px) {
-    .edit_niches_wrapper .role {
-        margin-bottom: 4px;
+.edit_niches_wrapper {
+    .title {
+        color: $color-2;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 16px;
     }
 
-    .edit_niches_wrapper .title {
-        margin-bottom: 24px;
-        margin-top: 8px;
+    .role {
+        position: relative;
+        margin-bottom: 8px;
+    
+        input {
+            padding: 0px 44px 0 12px;
+        }
+        
+        label {
+            display: none;
+        }
+        
+        svg {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+}
+
+.dark-theme .edit_niches_wrapper {
+    .title {
+        color: $color-1;
+    }
+
+    .role svg path {
+        stroke: $color-20;
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    .edit_niches_wrapper {
+        .role {
+            margin-bottom: 4px;
+        }
+    
+        .title {
+            margin-bottom: 24px;
+            margin-top: 8px;
+        }
     }
 
     .dark-theme .edit_niches_wrapper .title {
-        color: #D3D2D2;
+        color: $color-4;
     }
 }
 </style>

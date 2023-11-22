@@ -105,37 +105,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .list_pages {
     display: flex;
     align-items: center;
     gap: 4px;
-}
+    
+    .item {
+        color: $color-6;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+    }
 
-.list_pages .item {
-    color: #BDBDBD;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-.dark-theme .list_pages .item {
-    color: #A6A5A5;
-}
-
-.list_pages .item.active {
-    color: #121111;
-}
-
-.dark-theme .list_pages .item.active {
-    color: #FFFFFF;
-}
-
-.dark-theme .list_pages svg path {
-    stroke: #fff;
+    .item.active {
+        color: $color-2;
+    }
 }
 
 .edit_profile_content {
@@ -151,69 +138,83 @@ export default {
 
 .edit_links {
     border-radius: 16px;
-    background: #F6F6F6;
+    background: $color-7;
     display: flex;
     flex-direction: column;
     width: 325px;
     padding: 12px;
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        padding: 0 16px;
+        height: 56px;
+
+        .title {
+            color: $color-19;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+        }
+    }
+
+    .item.active {
+        border-radius: 8px;
+        background: $color-1;
+
+        .title {
+            color: $color-5;
+            font-weight: 600;
+        }
+
+        svg path {
+            stroke: $color-5;
+        }
+    }
 }
 
-.dark-theme .edit_links {
-    background: #222222;
-}
+.dark-theme {
+    .list_pages {
+        .item {
+            color: $color-11;
+        }
+        
+        .item.active {
+            color: $color-1;
+        }
 
-.edit_links .item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    padding: 0 16px;
-    height: 56px;
-}
+        svg path {
+            stroke: $color-1;
+        }
+    }
 
-.dark-theme .edit_links .item .title {
-    color: #A6A5A5;
-}
+    .edit_links {
+        background: $color-15;
 
-.dark-theme .edit_links .item svg path {
-    stroke: #4D4D4D;
-}
+        .item {
+            .title {
+                color: $color-11;
+            }
 
-.edit_links .item.active {
-    border-radius: 8px;
-    background: #FFF;
-}
+            svg path {
+                stroke: $color-20;
+            }
+        }
 
-.dark-theme .edit_links .item.active {
-    background: #3B3B3B;
-}
+        .item.active {
+            background: $color-12;
 
-.edit_links .item .title {
-    color: #727272;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-}
+            .title {
+                color: $color-1;
+            }
 
-
-.edit_links .item.active .title {
-    color: #CF2E2E;
-    font-weight: 600;
-}
-
-.dark-theme .edit_links .item.active .title {
-    color: #fff;
-}
-
-.edit_links .item.active svg path {
-    stroke: #CF2E2E;
-}
-
-.dark-theme .edit_links .item.active svg path {
-    stroke: #fff;
+            svg path {
+                stroke: $color-1;
+            }
+        }
+    }
 }
 
 .view_right {
@@ -221,13 +222,13 @@ export default {
 }
 
 @media only screen and (max-width: 992px) {
-    .edit_profile_content .edit_links,
-    .edit_profile_content .edit_link {
-        display: none;
-    }
-
     .edit_profile_content {
         padding: 56px 16px 118px;
+
+        .edit_links,
+        .edit_link {
+            display: none;
+        }
     }
 
     .edit_profile_content.active {

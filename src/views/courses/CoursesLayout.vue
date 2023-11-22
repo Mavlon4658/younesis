@@ -52,7 +52,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .courses_lyout_content {
     padding: 20px;
 }
@@ -66,31 +68,29 @@ export default {
     align-items: center;
     gap: 8px;
     margin-bottom: 20px;
+
+    .link {
+        border-radius: 20px;
+        background: $color-7;
+        padding: 12px 16px;
+        color: $color-2;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-decoration: none;
+    }
+
+    .link.active {
+        background: $color-5;
+        color: $color-1;
+        font-weight: 600;
+    }
 }
 
-.courses_links .link {
-    border-radius: 20px;
-    background: #F6F6F6;
-    padding: 12px 16px;
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    text-decoration: none;
-}
 
 .dark-theme .courses_links .link {
     background: #3B3B3B;
-    color: #fff;
-}
-
-.courses_links .link.active {
-    background: #CF2E2E;
-    color: #fff;
-    font-weight: 600;
+    color: $color-1;
 }
 
 .mobile_title {
@@ -104,11 +104,8 @@ export default {
 
     .mobile_title {
         display: block;
-        color: #121111;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: "Raleway", sans-serif;
+        color: $color-2;
         font-size: 24px;
-        font-style: normal;
         font-weight: 700;
         line-height: 28px;
         padding: 0px 16px;
@@ -116,7 +113,7 @@ export default {
     }
 
     .dark-theme .mobile_title {
-        color: #fff;
+        color: $color-1;
     }
 
     .courses_links {

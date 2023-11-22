@@ -56,7 +56,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/_variables.scss';
+
 .story_modal {
     position: fixed;
     top: 0;
@@ -76,13 +78,14 @@ export default {
     height: 800px;
     position: relative;
     overflow: hidden;
+
+    .story_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
-.story_modal_content .story_img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .story_modal_head_wrapper {
     position: absolute;
@@ -112,7 +115,7 @@ export default {
 }
 
 .story_modal_head_item.actived {
-    background: #fff;
+    background: $color-1;
 }
 
 @keyframes storyAnimation {
@@ -131,7 +134,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: $color-1;
     border-radius: 4px;
     animation: storyAnimation 3s linear 1;
 }
@@ -151,66 +154,55 @@ export default {
     left: 20px;
     width: calc(100% - 40px);
     bottom: 48px;
+    
+    .title {
+        color: $color-1;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 32px;
+        margin-bottom: 16px;
+    }
+    
+    .subtitle {
+        color: rgba(255, 255, 255, 0.80);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 16px;
+    }
+    
+    .register_btn {
+        width: 100%;
+        border-radius: 12px;
+        background: $color-1;
+        color: $color-2;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        text-decoration: none;
+        margin-bottom: 8px;
+        margin-top: 16px;
+    }
+    
+    .login_btn {
+        border-radius: 12px;
+        border: 1px solid $color-16;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-1;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        text-decoration: none;
+    }
 }
 
-.story_modal_content_foot .title {
-    color: #FFF;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px;
-    margin-bottom: 16px;
-}
-
-.story_modal_content_foot .subtitle {
-    color: rgba(255, 255, 255, 0.80);
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-    margin-bottom: 16px;
-}
-
-.story_modal_content_foot .register_btn {
-    width: 100%;
-    border-radius: 12px;
-    background: #FFF;
-    color: #121111;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 56px;
-    text-decoration: none;
-    margin-bottom: 8px;
-    margin-top: 16px;
-}
-
-.story_modal_content_foot .login_btn {
-    border-radius: 12px;
-    border: 1px solid #F3EFEF;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFF;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px;
-    text-decoration: none;
-}
 
 @media only screen and (max-width: 992px) {
     .story_modal_content {
