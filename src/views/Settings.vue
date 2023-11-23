@@ -5,7 +5,7 @@
         </Nav>
         <div class="settings_content">
             <mobile-edit-header to="Profile">Ссылки на проекты</mobile-edit-header>
-            <div class="settings">
+            <div class="settings first_settings">
                 <div class="left">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M18.395 13.027C18.725 12.872 19.077 13.197 18.985 13.55C18.671 14.752 18.054 15.896 17.104 16.846C14.283 19.667 9.77001 19.726 7.02201 16.978C4.27401 14.23 4.33401 9.71599 7.15501 6.89499C8.10501 5.94499 9.24801 5.32799 10.451 5.01399C10.804 4.92199 11.128 5.27399 10.974 5.60399C9.97201 7.74299 10.301 10.305 11.998 12.002C13.694 13.7 16.256 14.029 18.395 13.027V13.027Z" stroke="#BDBDBD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -138,6 +138,88 @@ export default {
 
             .left svg path {
                 stroke: $color-20;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .settings_content {
+        border-radius: 16px;
+        background: $color-7;
+        margin: 20px;
+
+        .settings {
+            padding: 16px;
+            border-radius: 8px;
+
+            .left {
+                .title {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    color: $color-11;
+                }
+
+                svg {
+                    display: block;
+                }
+            }
+
+            svg {
+                display: none;
+            }
+        }
+        
+        .first_settings {
+            background: $color-1;
+
+            .left {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    path {
+                        stroke: $color-2;
+                    }
+                }
+
+                .title {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 22px;
+                    color: $color-2;
+                }
+            }
+        }
+    }
+
+    .dark-theme {
+        .settings_content {
+            background: $color-15;
+
+            .settings {
+                .left {
+                    .title {
+                        color: $color-11;
+                    }
+                }
+            }
+            
+            .first_settings {
+                background: $color-12;
+
+                .left {
+                    svg {
+                        path {
+                            stroke: $color-1;
+                        }
+                    }
+
+                    .title {
+                        color: $color-1;
+                    }
+                }
             }
         }
     }

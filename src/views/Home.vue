@@ -13,8 +13,9 @@
       <div class="wheel_card">
         <div class="title">Крути колесо <br> и забирай подарок!</div>
         <div class="subtitle">Доступно одно вращение</div>
-        <button class="btn">Вращать</button>
-        <img src="@/assets/images/wheel.png" alt="">
+        <button @click="getBonuce" class="btn">Вращать</button>
+        <wheel-spin v-model:value="bonuce"></wheel-spin>
+        <!-- <img src="@/assets/images/wheel.png" alt=""> -->
       </div>
 
       <!-- Stories -->
@@ -35,11 +36,12 @@
 </template>
 
 <script>
-import Story from '@/components/Story.vue'
+import Story from '@/components/Story.vue';
+import WheelSpin from '@/components/WheelSpin.vue';
 
 export default {
   name: 'Home',
-  components: {Story},
+  components: {Story, WheelSpin},
   data () {
     return {
       stories: [
@@ -64,12 +66,16 @@ export default {
       ],
       story_show: false,
       story_show_index: null,
+      bonuce: {}
     }
   },
   methods: {
     storyShow (index) {
       this.story_show_index = index;
       this.story_show = true;
+    },
+    getBonuce () {
+      $('button[class="rotate-btn"]').click()
     }
   }
 }
@@ -101,14 +107,14 @@ export default {
   gap: 8px;
   order: 1;
 
-  .img {
+  img {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
   }
   
-  .img.mobile {
+  img.mobile {
     display: none;
   }
   
