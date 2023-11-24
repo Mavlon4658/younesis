@@ -109,7 +109,7 @@ export default {
                 this.rolling = false;
                 this.$emit('update:value', prizeList[result]);
                 alert("Bonuce: " + prizeList[result].name + ' - ' + prizeList[result].description);
-            }, 4500);
+            }, 6000);
         }
     },
     watch: {
