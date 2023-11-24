@@ -161,7 +161,7 @@ export default {
     height: 100%;
     border-radius: 1000px;
     overflow: hidden;
-    transition: transform 4s ease-in-out;
+    transition: transform 4s ease;
     position: relative;
 
     .wheel-bg-img {
