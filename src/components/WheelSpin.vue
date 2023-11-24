@@ -104,10 +104,11 @@ export default {
                 wheelDeg % 360 +
                 6 * 360 +
                 (360 - 360 / prizeList.length * result);
+                console.log(this.wheelDeg);
             setTimeout(() => {
                 this.rolling = false;
                 this.$emit('update:value', prizeList[result]);
-                alert("Bonuce: " + prizeList[result].name + ' - ' + prizeList[result].description);
+                // alert("Bonuce: " + prizeList[result].name + ' - ' + prizeList[result].description);
             }, 4500);
         }
     },
@@ -161,7 +162,7 @@ export default {
     height: 100%;
     border-radius: 1000px;
     overflow: hidden;
-    transition: transform 4s ease;
+    transition: transform 6s ease;
     position: relative;
 
     .wheel-bg-img {
