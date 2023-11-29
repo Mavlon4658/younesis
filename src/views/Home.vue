@@ -21,15 +21,15 @@
       <!-- Stories -->
       <div class="stories">
         <div
-          v-for="story in stories"
-          :key="story.id"
-          @click="storyShow(story.id)"
+          v-for="(story, index) in getStories.story_items"
+          :key="index"
+          @click="storyShow(index+1)"
           class="story"
         >
-          <img :src="require(`@/assets/images/story_${story.img}.png`)" alt="">
+          <img :src="story.image" alt="">
           <div class="story_title">{{ story.title }}</div>
         </div>
-        <Story v-if="story_show" v-model:show="story_show" :idx="story_show_index" :stories="stories" />
+        <Story v-if="story_show" v-model:show="story_show" :idx="story_show_index" :stories="[...getStories.story_items]" />
       </div>
     </div>
   </div>
@@ -38,6 +38,7 @@
 <script>
 import Story from '@/components/Story.vue';
 import WheelSpin from '@/components/WheelSpin.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Home',
@@ -69,6 +70,9 @@ export default {
       bonuce: {}
     }
   },
+  computed: {
+    ...mapGetters(['getStories']),
+  },
   methods: {
     storyShow (index) {
       this.story_show_index = index;
@@ -76,7 +80,11 @@ export default {
     },
     getBonuce () {
       $('button[class="rotate-btn"]').click()
-    }
+    },
+    ...mapActions(['fetchStories']),
+  },
+  mounted () {
+    this.fetchStories();
   }
 }
 </script>

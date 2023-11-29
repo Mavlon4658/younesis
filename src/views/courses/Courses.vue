@@ -23,6 +23,7 @@
             </div>
         </div>
     </div>
+    
     <select-course v-if="!cards.length" />
     <course-modal v-if="show_course_modal" v-model:show="show_course_modal" />
 </template>
@@ -30,6 +31,7 @@
 <script>
 import SelectCourse from '@/components/SelectCourse.vue';
 import CourseModal from '@/components/CourseModal.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: "Courses",
@@ -47,10 +49,17 @@ export default {
             show_course_modal: false,
         }
     },
+    computed: {
+        ...mapGetters(['getCourses']),
+    },
     methods: {
         openCourse (card) {
             this.show_course_modal = true;
-        }
+        },
+        ...mapActions(['fetchCourses']),
+    },
+    mounted () {
+        this.fetchCourses()
     }
 }
 </script>

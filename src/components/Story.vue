@@ -7,7 +7,8 @@
                         v-for="i in stories.length"
                         :key="i"
                         class="story_modal_head_item"
-                        :class="{ 'active': i === index + 1, 'actived': i < index + 1 }"
+                        :class="{'active': i === index + 1, 'actived': i < index + 1 }"
+                        :style="{width: `calc(100% / ${stories.length} - 40px / ${stories.length})`}"
                     ></div>
                 </div>
                 <button class="story_modal_close" @click="$emit('update:show', false)">
@@ -17,10 +18,10 @@
                     </svg>
                 </button>
             </div>
-            <img :src="require(`@/assets/images/story_mobile_${story.img}.png`)" alt="" class="story_img">
+            <img :src="story.image" :alt="story.image" class="story_img">
             <div class="story_modal_content_foot">
                 <div class="title">{{ story.title }}</div>
-                <div v-if="index !== stories.length - 1" class="subtitle">{{ story.subtitle }}</div>
+                <div v-if="index !== stories.length - 1" class="subtitle">{{ story.text }}</div>
                 <router-link v-if="index === stories.length - 1" :to="{name: 'Register'}" class="register_btn">Зарегистрироваться</router-link>
                 <router-link v-if="index === stories.length - 1" :to="{name: 'LogIn'}" class="login_btn">Войти</router-link>
             </div>
@@ -110,7 +111,6 @@ export default {
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.32);
     height: 4px;
-    width: calc(100% / 3 - 40px / 3);
     position: relative;
 }
 

@@ -1,5 +1,6 @@
 <template>
   <router-view/>
+  
 </template>
 
 <script>
@@ -7,9 +8,7 @@
 export default ({
   name: "App",
   data () {
-    return {
-
-    }
+    return {}
   },
   created () {
     let dark = localStorage.getItem('dark_mode');
@@ -27,6 +26,7 @@ export default ({
       $('body').removeClass('dark-theme')
     }
   },
+  methods: {}
 })
 </script>
 
