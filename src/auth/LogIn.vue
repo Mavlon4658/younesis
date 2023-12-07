@@ -9,13 +9,14 @@
                 <router-link class="link" :to="{name: 'Register'}">Зарегистрироваться</router-link>
             </div>
         </div>
-        <CheckMsg v-if="send_msg" :phone="form_data.phone" v-model:show="send_msg" v-model:msg_code="msg_code"/>
+        <CheckMsg v-if="send_msg" :phone="form_data.phone" :error="error" v-model:show="send_msg" v-model:msg_code="msg_code"/>
     </auth-default>
 </template>
 
 <script>
 import AuthDefault from '@/auth/AuthDefault.vue'
 import CheckMsg from '@/auth/CheckMsg.vue'
+import axios from '@/axios.js'
 
 export default {
     name: "LogIn",
@@ -26,17 +27,47 @@ export default {
     data () {
         return {
             form_data: {
-                phone: '+74543334455'
+                phone: '+7'
             },
             send_msg: false,
-            msg_code: ''
+            msg_code: '',
+            error: 'sdf'
+        }
+    },
+    watch: {
+        msg_code () {
+            if (this.msg_code.length == 4) {
+                this.checkCode();
+            }
+        }
+    },
+    computed: {
+        phone_number () {
+            return this.form_data.phone.replace(/\+/g, '');
         }
     },
     methods: {
-        sendformData () {
-            console.log('send form data');
-            this.send_msg = true;
-        }
+        async sendformData () {
+            if (this.phone_number.length == 11) {
+                let d = await axios.logIn(this.phone_number);
+                this.send_msg = true;
+            }
+        },
+        async checkCode () {
+            try {
+                let d = await axios.checkLogInCode(this.phone_number, this.msg_code);
+                // if (d)
+                localStorage.setItem('token', d.data.token)
+                this.$router.push({name: "Home"})
+            } catch (err) {
+                if (err.response.data.detail) {
+                    this.error = err.response.data.detail
+                    setTimeout(() => {
+                        this.error = null
+                    }, 5000);
+                }
+            }
+        },
     }
 }  
 </script>

@@ -98,6 +98,15 @@ body.dark-theme {
     }
 }
 
+.error_text {
+    background: #cf2e2e4e;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
 .link-red {
     border-radius: 8px;
     background: $color-5;

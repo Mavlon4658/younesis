@@ -178,7 +178,8 @@ export default {
             console.log('Save user data');
         },
         logOut () {
-            console.log('log out');
+            localStorage.removeItem('token');
+            this.$router.push({name: 'LogIn'})
         }
     }
 }

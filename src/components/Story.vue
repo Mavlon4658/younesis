@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import axios from '@/axios.js';
+
 export default {
     name: 'Story',
     props: {
@@ -45,6 +47,7 @@ export default {
         }
     },
     mounted () {
+        axios.startView(this.story.id, this.story.story);
         let clrinterval = setInterval(() => {
             if (this.index < this.stories.length - 1) {
                 this.story = this.stories[this.index+1]
