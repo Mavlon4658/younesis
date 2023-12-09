@@ -26,7 +26,7 @@
           @click="storyShow(index+1)"
           class="story"
         >
-          <img :src="story.image" alt="">
+          <img :src="getImageSrc(story.image)" alt="">
           <div class="story_title">{{ story.title }}</div>
         </div>
         <Story v-if="story_show" v-model:show="story_show" :idx="story_show_index" :stories="[...getStories.story_items]" />
@@ -39,6 +39,7 @@
 import Story from '@/components/Story.vue';
 import WheelSpin from '@/components/WheelSpin.vue';
 import { mapGetters, mapActions } from 'vuex';
+import axios from '@/axios.js';
 
 export default {
   name: 'Home',
@@ -82,6 +83,9 @@ export default {
       $('button[class="rotate-btn"]').click()
     },
     ...mapActions(['fetchStories']),
+    getImageSrc (url) {
+        return url.replace(':443', '')
+    },
   },
   mounted () {
     this.fetchStories();

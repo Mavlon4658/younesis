@@ -1,5 +1,6 @@
 import axios, { toFormData } from "axios";
 import moment from 'moment';
+import Cookies from "js-cookie";
 
 const axiosInstance = axios.create({
     baseURL: 'https://ednet.gogo.vc',
@@ -9,13 +10,12 @@ const axiosInstance = axios.create({
     },
 })
 
-const getToday = () => {
+const getToday = function () {
     return moment(Date.now()).toISOString();
 };
 
-const addToken = async () => {
-    let token = await localStorage.getItem('token');
-    axiosInstance.defaults.headers.common['Authorization'] = 'Token ' + token;
+function getToken ()  {
+    return localStorage.getItem('token');
 }
 
 const removeToken = async () => {
@@ -63,11 +63,29 @@ export default {
         })
     },
 
-    getStories (isActive, limit, offset) {
+    getStories (isActive) {
         return axiosInstance.get('/stories', {
             is_active: isActive,
-            // limit,
-            // offset
+        })
+    },
+
+    startView (story_id, item_id) {
+        return axiosInstance.post(`/stories/${story_id}/items/${item_id}/start-view/`, {
+            'start_view_at': getToday()
+        }, {
+            headers: {
+                'Authorization': 'Token ' + localStorage.getItem('token'),
+            }
+        })
+    },
+
+    endView (story_id, item_id) {
+        return axiosInstance.post(`/stories/${story_id}/items/${item_id}/end-view/`, {
+            'end_view_at': getToday()
+        }, {
+            headers: {
+                'Authorization': 'Token ' + localStorage.getItem('token'),
+            }
         })
     },
 
@@ -79,9 +97,4 @@ export default {
         })
     },
 
-    startView (story_id, item_id) {
-        axiosInstance.post(`/stories/${story_id}/items/${item_id}/start-view/`, {
-            'start_view_at': getToday(),
-        })
-    }
 }

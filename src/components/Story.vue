@@ -11,14 +11,14 @@
                         :style="{width: `calc(100% / ${stories.length} - 40px / ${stories.length})`}"
                     ></div>
                 </div>
-                <button class="story_modal_close" @click="$emit('update:show', false)">
+                <button class="story_modal_close" @click="closeStory()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M6 6L18 18" stroke="#121111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M18 6L6 18" stroke="#121111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
             </div>
-            <img :src="story.image" :alt="story.image" class="story_img">
+            <img :src="getImageSrc(story.image)" class="story_img" @click="nextStory(true)">
             <div class="story_modal_content_foot">
                 <div class="title">{{ story.title }}</div>
                 <div v-if="index !== stories.length - 1" class="subtitle">{{ story.text }}</div>
@@ -44,18 +44,68 @@ export default {
         return {
             story: this.stories[this.idx-1],
             index: this.idx-1,
+            clrInterval: null
         }
     },
     mounted () {
-        axios.startView(this.story.id, this.story.story);
-        let clrinterval = setInterval(() => {
-            if (this.index < this.stories.length - 1) {
-                this.story = this.stories[this.index+1]
-                this.index++;
-            } else {
-                clearInterval(clrinterval);
+        // axios.startView(this.story.id, this.story.story);
+        this.nextStory()
+    },
+    methods: {
+        nextStory (next = false) {
+            let t = true;
+            if (this.index !== this.stories.length - 1) {
+                if(next) {
+                    clearInterval(this.clrinterval);
+                    axios.endView(this.story.story, this.story.id)
+                        .then(res => {})
+                        .catch(err => {
+                            console.log(err);
+                        })
+                    if (this.index < this.stories.length - 1) {
+                        this.index++;
+                    }
+                }
+                axios.startView(this.story.story, this.story.id)
+                    .then(res => {})
+                    .catch(err => {
+                        console.log(err);
+                    })
+
+                this.clrInterval = setInterval(() => {
+                    if (this.index < this.stories.length - 1) {
+                        axios.endView(this.story.story, this.story.id)
+                            .then(res => {})
+                            .catch(err => {console.log(err);})
+    
+                        this.story = this.stories[this.index+1]
+                        this.index++;
+    
+                        axios.startView(this.story.story, this.story.id)
+                            .then(res => {})
+                            .catch(err => {console.log(err);})
+                    } else {
+                        if (t) {
+                            axios.endView(this.story.story, this.story.id)
+                                .then(res => {})
+                                .catch(err => {console.log(err);})
+                            t = false
+                        }
+                        clearInterval(this.clrinterval);
+                    }
+                }, 3000);
             }
-        }, 3000);
+        },
+        closeStory () {
+            clearInterval(this.clrInterval);
+            this.$emit('update:show', false);
+        },
+        getImageSrc (url) {
+            return url.replace(':443', '')
+        },
+    },
+    beforeDestroy() {
+        alert('ishladi')
     }
 }
 </script>

@@ -24,7 +24,7 @@ export default createStore({
   actions: {
     async fetchStories ({commit}) {
       try {
-        const response = await axios.getStories(true, 1, 1);
+        const response = await axios.getStories(true);
         commit('setStories', response.data.filter(a => a.is_active)[0]);
       } catch (err) {
         console.log(err);

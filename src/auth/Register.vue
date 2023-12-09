@@ -36,7 +36,7 @@ export default {
             },
             send_msg: false,
             msg_code: '',
-            error: 'sdfsdf'
+            error: ''
         }
     },
     watch: {

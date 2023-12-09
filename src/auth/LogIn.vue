@@ -31,7 +31,7 @@ export default {
             },
             send_msg: false,
             msg_code: '',
-            error: 'sdf'
+            error: ''
         }
     },
     watch: {
@@ -56,7 +56,6 @@ export default {
         async checkCode () {
             try {
                 let d = await axios.checkLogInCode(this.phone_number, this.msg_code);
-                // if (d)
                 localStorage.setItem('token', d.data.token)
                 this.$router.push({name: "Home"})
             } catch (err) {
