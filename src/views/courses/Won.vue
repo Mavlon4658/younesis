@@ -29,6 +29,7 @@
 
 <script>
 import SelectCourse from '@/components/SelectCourse.vue';
+import axios from '@/axios.js';
 
 export default {
     name: 'Won',
@@ -38,9 +39,23 @@ export default {
     data () {
         return {
             cards: [
-                {id: 1, title: 'Продающие диагностики', img: '1_3', remained: 'Закроется через 23:42:12', degree_title: "3 из 10 уроков пройдено", degree: '30%'},
+                // {id: 1, title: 'Продающие диагностики', img: '1_3', remained: 'Закроется через 23:42:12', degree_title: "3 из 10 уроков пройдено", degree: '30%'},
             ]
         }
+    },
+    methods: {
+        getMyCourse () {
+            axios.myCourses('promo')
+                .then(res => {
+                    console.log(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+    },
+    mounted () {
+        this.getMyCourse()
     }
 }
 </script>

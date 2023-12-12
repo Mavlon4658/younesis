@@ -18,6 +18,7 @@
         <!-- <img src="@/assets/images/wheel.png" alt=""> -->
       </div>
 
+      <main-button @click="clickMe()">Click me</main-button>
       <!-- Stories -->
       <div class="stories">
         <div
@@ -86,6 +87,13 @@ export default {
     getImageSrc (url) {
         return url.replace(':443', '')
     },
+    clickMe () {
+      axios.myCourses('purchased').then(res => {
+        console.log(res);
+      }).catch(err => {
+        console.log(err);
+      })
+    }
   },
   mounted () {
     this.fetchStories();

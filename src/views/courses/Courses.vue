@@ -31,7 +31,7 @@
 <script>
 import SelectCourse from '@/components/SelectCourse.vue';
 import CourseModal from '@/components/CourseModal.vue';
-import { mapGetters, mapActions } from 'vuex';
+import axios from '@/axios.js';
 
 export default {
     name: "Courses",
@@ -42,24 +42,31 @@ export default {
     data () {
         return {
             cards: [
-                {id: 1, title: 'Путь с 0 до 1 млн $', img: '1_1', degree_title: "7 из 10 уроков пройдено", degree: '70%'},
-                {id: 2, title: 'Сценарий продающего вебинара', img: '1_2', degree_title: "3 из 15 уроков пройдено", degree: '20%'},
-                {id: 3, title: 'Продающие диагностики', img: '1_3', degree_title: "0 из 15 уроков пройдено", degree: '20%'},
+                // {id: 1, title: 'Путь с 0 до 1 млн $', img: '1_1', degree_title: "7 из 10 уроков пройдено", degree: '70%'},
+                // {id: 2, title: 'Сценарий продающего вебинара', img: '1_2', degree_title: "3 из 15 уроков пройдено", degree: '20%'},
+                // {id: 3, title: 'Продающие диагностики', img: '1_3', degree_title: "0 из 15 уроков пройдено", degree: '20%'},
             ],
             show_course_modal: false,
         }
     },
     computed: {
-        ...mapGetters(['getCourses']),
     },
     methods: {
         openCourse (card) {
             this.show_course_modal = true;
         },
-        ...mapActions(['fetchCourses']),
+        getCourses () {
+            axios.myCourses('purchased')
+                .then(res => {
+                    console.log(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        },
     },
     mounted () {
-        this.fetchCourses()
+        this.getCourses()
     }
 }
 </script>

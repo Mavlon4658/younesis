@@ -97,4 +97,19 @@ export default {
         })
     },
 
+    myCourses (entrollment_type, limit = 20, offset = 0) {
+        return axiosInstance.get(`/lms/courses/my/?entrollment_type=${entrollment_type}&limit=${limit}&offset=${offset}`, {
+            headers: {
+                'Authorization': 'Token ' + localStorage.getItem('token'),
+            }
+        })
+    },
+
+    marketplace (limit = 20, offset = 0) {
+        return axiosInstance.get(`/lms/courses/?limit=${limit}&offset=${offset}`, {
+            headers: {
+                'Authorization': 'Token ' + localStorage.getItem('token'),
+            }
+        })
+    },
 }
