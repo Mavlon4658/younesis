@@ -2,22 +2,22 @@
     <div class="courses courses_card_wrapper">
         <div v-for="(item, i) in cards" :key="i" @click="openCourse(item)" class="card">
             <div class="card_left">
-                <img :src="require(`@/assets/images/card_${item.img}.png`)" alt="">
+                <img :src="item.course.preview_image ? $getUrl(item.course.preview_image) : require(`@/assets/images/card_1_${$makeRandom(1, 3)}.png`)" alt="">
             </div>
             <div class="card_right">
                 <div class="card_head">
                     <div class="card_img">
-                        <img :src="require(`@/assets/images/card_${item.img}.png`)">
+                        <img :src="item.course.preview_image ? $getUrl(item.course.preview_image) : require(`@/assets/images/card_1_${$makeRandom(1, 3)}.png`)">
                     </div>
-                    <div class="card_title">{{ item.title }}</div>
+                    <div class="card_title">{{item.course.title}}</div>
                 </div>
                 <div class="card_degree">
                     <div class="degree_head">
-                        <div class="dedgree_title">{{ item.degree_title }}</div>
-                        <div class="degree_value">{{ item.degree }}</div>
+                        <div class="dedgree_title">item.degree_title</div>
+                        <div class="degree_value">item.degree</div>
                     </div>
                     <div class="degree_line">
-                        <span :style="{width: item.degree}"></span>
+                        <!-- <span :style="{width: item.degree}"></span> -->
                     </div>
                 </div>
             </div>
@@ -58,7 +58,8 @@ export default {
         getCourses () {
             axios.myCourses('purchased')
                 .then(res => {
-                    console.log(res.data);
+                    console.log(res.data.results);
+                    this.cards = res.data.results;
                 })
                 .catch(err => {
                     console.log(err);

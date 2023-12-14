@@ -5,20 +5,19 @@ import router from './router'
 import store from './store'
 import '@/assets/app.scss'
 import components from '@/components/UI'
-// import axios from 'axios'
+import globalFunction from './globalFunction'
 import jQuery from "jquery";
 const $ = jQuery;
 window.$ = $;
 
 const app = createApp(App)
 
-// app.config.globalProperties.$axios = axios;
-
 components.forEach(component => {
     app.component(component.name, component);
 })
 
 app.use($)
+    .use(globalFunction)
     .use(store)
     .use(router)
     .mount('#app')

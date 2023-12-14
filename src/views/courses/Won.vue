@@ -2,23 +2,23 @@
     <div class="won courses_card_wrapper">
         <div v-for="(item, i) in cards" :key="i" class="card">
             <div class="card_left">
-                <img :src="require(`@/assets/images/card_${item.img}.png`)" alt="">
+                <img :src="item.course.preview_image ? $getUrl(item.course.preview_image) : require(`@/assets/images/card_1_${$makeRandom(1, 3)}.png`)" alt="">
             </div>
             <div class="card_right">
                 <div class="card_head">
                     <div class="card_img">
-                        <img :src="require(`@/assets/images/card_${item.img}.png`)">
+                        <img :src="item.course.preview_image ? $getUrl(item.course.preview_image) : require(`@/assets/images/card_1_${$makeRandom(1, 3)}.png`)">
                     </div>
-                    <div class="card_title">{{ item.title }}</div>
-                    <div class="remained">{{ item.remained }}</div>
+                    <div class="card_title">{{ item.course.title }}</div>
+                    <div class="remained">item.remained</div>
                 </div>
                 <div class="card_degree">
                     <div class="degree_head">
-                        <div class="dedgree_title">{{ item.degree_title }}</div>
-                        <div class="degree_value">{{ item.degree }}</div>
+                        <div class="dedgree_title">item.degree_title</div>
+                        <div class="degree_value">item.degree</div>
                     </div>
                     <div class="degree_line">
-                        <span :style="{width: item.degree}"></span>
+                        <!-- <span :style="{width: item.degree}"></span> -->
                     </div>
                 </div>
             </div>
@@ -47,7 +47,8 @@ export default {
         getMyCourse () {
             axios.myCourses('promo')
                 .then(res => {
-                    console.log(res.data);
+                    this.cards = res.data.results;
+                    console.log(res.data.results);
                 })
                 .catch(err => {
                     console.log(err);

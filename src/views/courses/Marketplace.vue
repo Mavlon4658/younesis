@@ -7,13 +7,12 @@
             <div class="card_right">
                 <div class="card_head">
                     <div class="card_img">
-                        <img :src="require(`@/assets/images/card_3_${makeRandom(1, 5)}.png`)">
+                        <img :src="item.preview_image ? $getUrl(item.preview_image) : require(`@/assets/images/card_3_${$makeRandom(1, 5)}.png`)">
                     </div>
                     <div class="card_title">{{item.title}}</div>
                     <div class="amount">
-                        9990₽
-                        <!-- {{ item.amount }} -->
-                        <!-- <span v-if="item.discount">{{ item.discount }}</span> -->
+                        {{ item.price }}
+                        <span v-if="item.old_price">{{ item.old_price }}</span>
                     </div>
                 </div>
                 <main-button type="light">Подробнее</main-button>
@@ -34,47 +33,7 @@ export default {
     },
     data () {
         return {
-            cards: [
-                // {
-                //     id: 1,
-                //     title: 'Денежные убеждения',
-                //     img: '3_1',
-                //     amount: "9990₽"
-                // },
-                // {
-                //     id: 2,
-                //     title: 'Сценарий продающего вебинара',
-                //     img: '3_2',
-                //     amount: "9990₽",
-                //     discount: '19 990₽',
-                // },
-                // {
-                //     id: 3,
-                //     title: 'Как провести свой первый вебинар и не сойти с ума?',
-                //     img: '3_3',
-                //     amount: "12 990₽",
-                //     discount: '16 990₽',
-                // },
-                // {
-                //     id: 4,
-                //     title: 'Распаковка жизненного метода',
-                //     img: '3_4',
-                //     amount: "Бесплатно"
-                // },
-                // {
-                //     id: 5,
-                //     title: 'Распаковка жизненного метода',
-                //     img: '3_5',
-                //     amount: "Бесплатно"
-                // },
-                // {
-                //     id: 6,
-                //     title: 'Личный ассистент',
-                //     img: '3_1',
-                //     amount: "3990₽",
-                //     discount: '7990₽'
-                // },
-            ]
+            cards: []
         }
     },
     methods: {
@@ -82,15 +41,14 @@ export default {
             axios.marketplace()
                 .then(res => {
                     this.cards = res.data.results;
-                    // console.log(res.data.results);
                 })
                 .catch(err => {
                     console.log(err);
                 })
         },
-        makeRandom (min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+        // makeRandom (min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
     },
     mounted () {
         this.getMarketplace();

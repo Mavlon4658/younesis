@@ -49,8 +49,12 @@ export default {
     methods: {
         async sendformData () {
             if (this.phone_number.length == 11) {
-                let d = await axios.logIn(this.phone_number);
-                this.send_msg = true;
+                try {
+                    let d = await axios.logIn(this.phone_number);
+                    this.send_msg = true;
+                } catch (err) {
+                    console.log(err);
+                }
             }
         },
         async checkCode () {

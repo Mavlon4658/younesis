@@ -18,7 +18,6 @@
         <!-- <img src="@/assets/images/wheel.png" alt=""> -->
       </div>
 
-      <main-button @click="clickMe()">Click me</main-button>
       <!-- Stories -->
       <div class="stories">
         <div
