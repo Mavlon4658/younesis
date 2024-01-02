@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import axios from '@/axios.js'
+
 export default {
     name: "WheelSpin",
     props: {
@@ -80,7 +82,8 @@ export default {
                     name: "Урок",
                     description: "Продающие диагностики"
                 }
-            ]
+            ],
+            bonuce: ""
         }
     },
     computed: {
@@ -97,6 +100,11 @@ export default {
             this.roll(result);
         },
         roll(result) {
+            axios.roulette().then(res => {
+                this.bonuce = res.data.course.title;
+            }).catch(err => {
+                console.log(err);
+            })
             this.rolling = true;
             const { wheelDeg, prizeList } = this;
             this.wheelDeg =
@@ -104,11 +112,11 @@ export default {
                 wheelDeg % 360 +
                 6 * 360 +
                 (360 - 360 / prizeList.length * result);
-                console.log(this.wheelDeg);
             setTimeout(() => {
                 this.rolling = false;
                 this.$emit('update:value', prizeList[result]);
-                alert("Bonuce: " + prizeList[result].name + ' - ' + prizeList[result].description);
+                // alert("Bonuce: " + prizeList[result].name + ' - ' + prizeList[result].description);
+                alert("Bonuce: " + this.bonuce);
             }, 6000);
         }
     },

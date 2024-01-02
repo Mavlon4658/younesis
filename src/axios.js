@@ -112,4 +112,12 @@ export default {
             }
         })
     },
+
+    roulette () {
+        return axiosInstance.post('/api/roulette/play', {}, {
+            headers: {
+                'Authorization': 'Token ' + localStorage.getItem('token'),
+            }
+        })
+    }
 }
