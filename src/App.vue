@@ -25,6 +25,8 @@ export default ({
     } else {
       $('body').removeClass('dark-theme')
     }
+
+    $('body').addClass('dark-theme')
   },
   methods: {}
 })

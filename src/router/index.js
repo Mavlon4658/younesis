@@ -21,6 +21,10 @@ import EditNiches from '@/views/profile/EditNiches.vue';
 import EditLinksToProjects from '@/views/profile/EditLinksToProjects.vue';
 import EditContacts from '@/views/profile/EditContacts.vue';
 
+// new version
+import NewHome from '@/newVersion/Home.vue';
+// new version end
+
 const routes = [
   {
     path: '/',
@@ -73,6 +77,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
+  },
+  {
+    path: '/new-version',
+    name: 'NewHome',
+    component: NewHome,
   }
 ]
 

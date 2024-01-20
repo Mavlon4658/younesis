@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
     -webkit-tap-highlight-color: transparent !important;
 }
 
@@ -531,3 +532,30 @@ body.dark-theme {
         }
     }
 }
+
+
+// new version
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.main_container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.main_btn {
+    border-radius: 44px;
+    background: linear-gradient(90deg, #EB3349 0%, #F44343 100%);
+    padding: 10px 12px;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    color: #fff;
+}
+// new version end
