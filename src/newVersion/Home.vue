@@ -50,10 +50,48 @@
             <!-- Wheels end -->
 
             <!-- Tools -->
-            <div class="main_container toos">
-                <h2>Инструменты</h2>
-                <div class="tools_lists">
+            <div class="main_container">
+                <div class="tools">
+                    <h2>Инструменты</h2>
+                    <div class="tools_lists">
+                        <router-link to="#" class="tools_card"> 
+                            <div class="img">
+                                <img src="@/assets/images/tools_card_1.svg" alt="">
+                            </div>
+                            <div class="title">
+                                Икигай
+                            </div>
+                        </router-link>
+                        <router-link to="#" class="tools_card"> 
+                            <span class="alert">1</span>
+                            <div class="img img_2">
+                                <img src="@/assets/images/tools_card_2.svg" alt="">
+                            </div>
+                            <div class="title">
+                                Мастермайнд
+                            </div>
+                        </router-link>
+                        <router-link to="#" class="tools_card"> 
+                            <div class="img img_3">
+                                <img src="@/assets/images/tools_card_3.svg" alt="">
+                            </div>
+                            <div class="title">
+                                Икигай
+                            </div>
+                        </router-link>
+                        <router-link to="#" class="tools_card"> 
+                            <span class="alert_2">
+                                <img src="@/assets/images/tools_alert_2.svg" alt="">
+                            </span>
+                            <div class="img">
+                                <img src="@/assets/images/tools_card_1.svg" alt="">
+                            </div>
+                            <div class="title">
+                                Колесо баланса
+                            </div>
+                        </router-link>
 
+                    </div>  
                 </div>
             </div>
             <!-- Tools end -->
@@ -209,6 +247,93 @@ export default {
             top: 0;
             height: 100%;
         }
+    }
+
+    .tools {
+        border-radius: 20px;
+        background:  #222;
+        padding: 16px;
+        margin: 24px auto;
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .tools_lists {
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 8px;   
+
+            .tools_card {
+                position: relative;
+                border-radius: 12px;
+                background: var(--theme-night-background-bg-card-04, #3B3B3B);
+                padding: 12px;
+                width: calc(50% - 4px);
+            }
+
+            .alert {
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                display: flex;
+                width: 28px;
+                height: 28px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 16px;
+                background: #FF2E37;
+                color: #FFF;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 18px;
+            }
+
+            .alert_2 {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                display: inline-flex;
+                height: 25px;
+                padding: 8px 4px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                background:  #222;
+            }
+
+            .img {
+                display: flex;
+                width: 36px;
+                height: 36px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                background: #CF3AA5;
+                margin-bottom: 8px;
+            }
+
+            .img_2 {
+                border-radius: 8px;
+                background: #FFA723;
+            }
+
+            .img_3 {
+                border-radius: 8px;
+                background: #33BBA3;
+            }
+
+            .title {
+                color:  #FFF;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 18px; 
+            }
+        }
+
+
     }
 }
 </style>
