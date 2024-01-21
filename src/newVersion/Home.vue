@@ -95,6 +95,29 @@
                 </div>
             </div>
             <!-- Tools end -->
+
+
+            <!-- New navs start-->
+            <div class="new_navs">
+                <div class="main_container">
+                   
+                    <router-link to="#" class="navs_link">
+                      <div class="img">
+                        <img src="@/assets/images/news_link_1.svg" alt="">
+                      </div>
+                    </router-link>
+                    <router-link to="#" class="navs_link">
+                    <img src="@/assets/images/news_link_2.svg" alt="">
+                    </router-link>
+                    <router-link to="#" class="navs_link">
+                       <img src="@/assets/images/news_link_3.svg" alt="">
+                    </router-link>
+
+                </div>
+
+            </div>
+
+            <!-- New navs end -->
         </div>
     </div>
 </template>
@@ -335,5 +358,28 @@ export default {
 
 
     }
+
+    .new_navs {
+        border-top: 1px solid #2B2B2B;
+
+        .main_container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .navs_link {
+                .img {
+                    display: flex;
+                    padding: 10px;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 4px;
+                    border-radius: 24px;
+                    background:  #CF2E2E;
+                }
+            }
+        }
+    }
+
 }
 </style>
