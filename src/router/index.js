@@ -22,7 +22,13 @@ import EditLinksToProjects from '@/views/profile/EditLinksToProjects.vue';
 import EditContacts from '@/views/profile/EditContacts.vue';
 
 // new version
+import NewHomeLayout from '@/newVersion/layouts/HomeLayout.vue'
 import NewHome from '@/newVersion/Home.vue';
+import News from '@/newVersion/news/News.vue'
+import NewsId from '@/newVersion/news/_id.vue';
+import Development from '@/newVersion/Development.vue';
+import Study from '@/newVersion/Study.vue';
+import Fair from '@/newVersion/Fair.vue'
 // new version end
 
 const routes = [
@@ -78,11 +84,22 @@ const routes = [
     name: 'Register',
     component: Register
   },
+
+  // New version
   {
     path: '/new-version',
-    name: 'NewHome',
-    component: NewHome,
+    name: 'NewHomeLayout',
+    component: NewHomeLayout,
+    children: [
+      {path: '', name: 'NewHome', component: NewHome},
+      {path: "news", name: 'News', component: News},
+      {path: 'news/:id', name: 'NewsId', component: NewsId},
+      {path: 'development', name: 'Development', component: Development},
+      {path: 'study', name: 'Study', component: Study},
+      {path: 'fair', name: 'Fair', component: Fair},
+    ]
   }
+  // New version end
 ]
 
 const router = createRouter({
