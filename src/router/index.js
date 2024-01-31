@@ -31,7 +31,8 @@ import Study from '@/newVersion/Study.vue';
 import Fair from '@/newVersion/Fair.vue'
 import Tinder from '@/newVersion/Tinder.vue'
 import CardHolder from '@/newVersion/CardHolder.vue'
-import NewProfile from '@/newVersion/Profile.vue'
+import NewProfile from '@/newVersion/profile/Profile.vue'
+import newProfileEdit from '@/newVersion/profile/Edit.vue'
 // new version end
 
 const routes = [
@@ -103,6 +104,7 @@ const routes = [
       {path: 'tinder', name: 'Tinder', component: Tinder},
       {path: 'card-holder', name: 'CardHolder', component: CardHolder},
       {path: 'profile', name: 'NewProfile', component: NewProfile},
+      {path: 'profile/edit', name: 'newProfileEdit', component: newProfileEdit},
     ]
   }
   // New version end
