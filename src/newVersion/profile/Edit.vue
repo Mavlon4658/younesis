@@ -77,6 +77,7 @@
             <span >{{item.price}}</span>
             <img :src="item.icon" alt="" />
           </div>
+          
           <img class="edit_right" src="@/assets/images/edit_right.svg" alt="" />
         </router-link>
 
