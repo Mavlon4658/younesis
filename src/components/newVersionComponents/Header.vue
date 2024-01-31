@@ -2,10 +2,10 @@
     <!-- New navs start-->
     <div class="new_navs">
         <div class="main_container">
-            <router-link to="#" class="navs_link active">
+            <router-link :to="{name: 'NewHome'}" class="navs_link active">
                 <img src="@/assets/images/news_link_1.svg" alt="">
             </router-link>
-            <router-link to="#" class="navs_link">
+            <router-link :to="{name: 'Tinder'}" class="navs_link">
                 <img src="@/assets/images/news_link_2.svg" alt="">
             </router-link>
             <router-link to="#" class="navs_link">

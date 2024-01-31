@@ -29,6 +29,8 @@ import NewsId from '@/newVersion/news/_id.vue';
 import Development from '@/newVersion/Development.vue';
 import Study from '@/newVersion/Study.vue';
 import Fair from '@/newVersion/Fair.vue'
+import Tinder from '@/newVersion/Tinder.vue'
+import CardHolder from '@/newVersion/CardHolder.vue'
 // new version end
 
 const routes = [
@@ -97,6 +99,8 @@ const routes = [
       {path: 'development', name: 'Development', component: Development},
       {path: 'study', name: 'Study', component: Study},
       {path: 'fair', name: 'Fair', component: Fair},
+      {path: 'tinder', name: 'Tinder', component: Tinder},
+      {path: 'card-holder', name: 'CardHolder', component: CardHolder},
     ]
   }
   // New version end
